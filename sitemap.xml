@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://colin-cloud.github.io/project/tags/index.html</loc>
+    <loc>https://colin-cloud.github.io/tags/index.html</loc>
     
     <lastmod>2025-09-12</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://colin-cloud.github.io/project/link/index.html</loc>
+    <loc>https://colin-cloud.github.io/link/index.html</loc>
     
     <lastmod>2025-09-12</lastmod>
     
@@ -20,7 +20,7 @@
   </url>
   
   <url>
-    <loc>https://colin-cloud.github.io/project/categories/index.html</loc>
+    <loc>https://colin-cloud.github.io/categories/index.html</loc>
     
     <lastmod>2025-09-12</lastmod>
     
@@ -29,7 +29,7 @@
   </url>
   
   <url>
-    <loc>https://colin-cloud.github.io/project/2020/02/14/11111/</loc>
+    <loc>https://colin-cloud.github.io/2020/02/14/11111/</loc>
     
     <lastmod>2025-09-12</lastmod>
     
@@ -38,7 +38,7 @@
   </url>
   
   <url>
-    <loc>https://colin-cloud.github.io/project/2025/09/11/hello-world/</loc>
+    <loc>https://colin-cloud.github.io/2025/09/11/hello-world/</loc>
     
     <lastmod>2025-09-11</lastmod>
     
@@ -48,7 +48,7 @@
   
 
   <url>
-    <loc>https://colin-cloud.github.io/project</loc>
+    <loc>https://colin-cloud.github.io/</loc>
     <lastmod>2025-09-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -56,14 +56,14 @@
 
   
   <url>
-    <loc>https://colin-cloud.github.io/project/tags/tag1/</loc>
+    <loc>https://colin-cloud.github.io/tags/tag1/</loc>
     <lastmod>2025-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://colin-cloud.github.io/project/tags/tag2/</loc>
+    <loc>https://colin-cloud.github.io/tags/tag2/</loc>
     <lastmod>2025-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -72,21 +72,21 @@
 
   
   <url>
-    <loc>https://colin-cloud.github.io/project/categories/1stCategory/</loc>
+    <loc>https://colin-cloud.github.io/categories/1stCategory/</loc>
     <lastmod>2025-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://colin-cloud.github.io/project/categories/1stCategory/sub-category-of-1st/</loc>
+    <loc>https://colin-cloud.github.io/categories/1stCategory/sub-category-of-1st/</loc>
     <lastmod>2025-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://colin-cloud.github.io/project/categories/2ndCategory/</loc>
+    <loc>https://colin-cloud.github.io/categories/2ndCategory/</loc>
     <lastmod>2025-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
