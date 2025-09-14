@@ -1,3 +1,11 @@
-http://example.com/2025/09/11/11111/
-http://example.com/2025/09/11/hello-world/
-http://example.com/
+https://colin-cloud.github.io/project/tags/index.html
+https://colin-cloud.github.io/project/link/index.html
+https://colin-cloud.github.io/project/categories/index.html
+https://colin-cloud.github.io/project/2020/02/14/11111/
+https://colin-cloud.github.io/project/2025/09/11/hello-world/
+https://colin-cloud.github.io/project
+https://colin-cloud.github.io/project/tags/tag1/
+https://colin-cloud.github.io/project/tags/tag2/
+https://colin-cloud.github.io/project/categories/1stCategory/
+https://colin-cloud.github.io/project/categories/1stCategory/sub-category-of-1st/
+https://colin-cloud.github.io/project/categories/2ndCategory/
