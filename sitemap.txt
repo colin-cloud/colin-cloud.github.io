@@ -1,11 +1,9 @@
+https://colin-cloud.github.io/2025/09/27/Music/
 https://colin-cloud.github.io/tags/index.html
 https://colin-cloud.github.io/link/index.html
 https://colin-cloud.github.io/categories/index.html
-https://colin-cloud.github.io/2020/02/14/11111/
-https://colin-cloud.github.io/2025/09/11/hello-world/
 https://colin-cloud.github.io/
-https://colin-cloud.github.io/tags/tag1/
-https://colin-cloud.github.io/tags/tag2/
+https://colin-cloud.github.io/tags/Music/
 https://colin-cloud.github.io/categories/1stCategory/
 https://colin-cloud.github.io/categories/1stCategory/sub-category-of-1st/
-https://colin-cloud.github.io/categories/2ndCategory/
+https://colin-cloud.github.io/categories/Music/
