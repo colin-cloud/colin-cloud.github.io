@@ -2,7 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://colin-cloud.github.io/2025/09/27/Music/</loc>
+    <loc>https://colin-cloud.github.io/2025/09/28/network_base/</loc>
+    
+    <lastmod>2025-09-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://colin-cloud.github.io/categories/index.html</loc>
     
     <lastmod>2025-09-27</lastmod>
     
@@ -13,7 +22,16 @@
   <url>
     <loc>https://colin-cloud.github.io/tags/index.html</loc>
     
-    <lastmod>2025-09-12</lastmod>
+    <lastmod>2025-09-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://colin-cloud.github.io/2025/09/27/Music/</loc>
+    
+    <lastmod>2025-09-27</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -21,15 +39,6 @@
   
   <url>
     <loc>https://colin-cloud.github.io/link/index.html</loc>
-    
-    <lastmod>2025-09-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://colin-cloud.github.io/categories/index.html</loc>
     
     <lastmod>2025-09-12</lastmod>
     
@@ -53,24 +62,31 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>https://colin-cloud.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</loc>
+    <lastmod>2025-09-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://colin-cloud.github.io/tags/TCP-IP/</loc>
+    <lastmod>2025-09-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
   <url>
-    <loc>https://colin-cloud.github.io/categories/1stCategory/</loc>
-    <lastmod>2025-09-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://colin-cloud.github.io/categories/1stCategory/sub-category-of-1st/</loc>
-    <lastmod>2025-09-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://colin-cloud.github.io/categories/Music/</loc>
+    <lastmod>2025-09-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://colin-cloud.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</loc>
     <lastmod>2025-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
