@@ -1,0 +1,20 @@
+.aplayer.aplayer-withlrc .aplayer-pic {
+    height: 120px;
+    width: 120px;
+}
+.aplayer.aplayer-withlrc .aplayer-info {
+    height: 120px;
+}
+.aplayer .aplayer-lrc {
+    height: 60px;
+}
+
+.aplayer .aplayer-lrc .aplayer-lrc-contents {
+    margin-top: 25px;
+}
+
+.aplayer .aplayer-list ol li .aplayer-list-index {
+    text-align: center;
+    display: inline-block;
+    width: 20px;
+}
