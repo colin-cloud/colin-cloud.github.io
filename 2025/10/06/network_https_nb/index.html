@@ -1,0 +1,333 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>计算机网络_HTTP篇_HTTP/2 牛逼在哪？ | 我的仓库 | Ashery</title><meta name="author" content="Ashery"><meta name="copyright" content="Ashery"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="计算机网络、HTTP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机网络_HTTP篇_HTTP&#x2F;2 牛逼在哪？">
+<meta property="og:url" content="https://colin-cloud.github.io/2025/10/06/network_https_nb/index.html">
+<meta property="og:site_name" content="我的仓库 | Ashery">
+<meta property="og:description" content="计算机网络、HTTP">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://colin-cloud.github.io/img/avatar.jpg">
+<meta property="article:published_time" content="2025-10-05T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-10-06T14:55:23.999Z">
+<meta property="article:author" content="Ashery">
+<meta property="article:tag" content="计算机网络">
+<meta property="article:tag" content="HTTP">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://colin-cloud.github.io/img/avatar.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "计算机网络_HTTP篇_HTTP/2 牛逼在哪？",
+  "url": "https://colin-cloud.github.io/2025/10/06/network_https_nb/",
+  "image": "https://colin-cloud.github.io/img/avatar.jpg",
+  "datePublished": "2025-10-05T16:00:00.000Z",
+  "dateModified": "2025-10-06T14:55:23.999Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Ashery",
+      "url": "https://colin-cloud.github.io"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.jpg"><link rel="canonical" href="https://colin-cloud.github.io/2025/10/06/network_https_nb/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '计算机网络_HTTP篇_HTTP/2 牛逼在哪？',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/background.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="我的仓库 | Ashery" type="application/atom+xml">
+</head><body><div id="web_bg" style="background-color: #efefef;"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/loading1.gif" data-original="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fa fa-comments-o"></i><span> 分享</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/bg.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">我的仓库 | Ashery</span></a><a class="nav-page-title" href="/"><span class="site-name">计算机网络_HTTP篇_HTTP/2 牛逼在哪？</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fa fa-comments-o"></i><span> 分享</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">计算机网络_HTTP篇_HTTP/2 牛逼在哪？</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-10-05T16:00:00.000Z" title="发表于 2025-10-06 00:00:00">2025-10-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-10-06T14:55:23.999Z" title="更新于 2025-10-06 22:55:23">2025-10-06</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">5.5k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>17分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="HTTP-2-牛逼在哪？"><a href="#HTTP-2-牛逼在哪？" class="headerlink" title="HTTP&#x2F;2 牛逼在哪？"></a>HTTP&#x2F;2 牛逼在哪？</h1><p>不多 BB 了，直接发车！</p>
+<p><strong>一起来看看 HTTP&#x2F;2 牛逼在哪？</strong></p>
+<p><img src="/img/loading1.gif" data-original="/2025/10/06/network_https_nb/image-20240105142731563.webp"></p>
+<h2 id="HTTP-1-1-协议的性能问题"><a href="#HTTP-1-1-协议的性能问题" class="headerlink" title="HTTP&#x2F;1.1 协议的性能问题"></a>HTTP&#x2F;1.1 协议的性能问题</h2><p>我们得先要了解下 HTTP&#x2F;1.1 协议存在的性能问题，因为 HTTP&#x2F;2 协议就是把这些性能问题逐个攻破了。</p>
+<p>现在的站点相比以前变化太多了，比如：</p>
+<ul>
+<li><em>消息的大小变大了</em>，从几 KB 大小的消息，到几 MB 大小的消息；</li>
+<li><em>页面资源变多了</em>，从每个页面不到 10 个的资源，到每页超 100 多个资源；</li>
+<li><em>内容形式变多样了</em>，从单纯到文本内容，到图片、视频、音频等内容；</li>
+<li><em>实时性要求变高了</em>，对页面的实时性要求的应用越来越多；</li>
+</ul>
+<p>这些变化带来的最大性能问题就是 <strong>HTTP&#x2F;1.1 的高延迟</strong>，延迟高必然影响的就是用户体验。主要原因如下几个：</p>
+<ul>
+<li><em>延迟难以下降</em>，虽然现在网络的「带宽」相比以前变多了，但是延迟降到一定幅度后，就很难再下降了，说白了就是到达了延迟的下限；</li>
+<li><em>并发连接有限</em>，谷歌浏览器最大并发连接数是 6 个，而且每一个连接都要经过 TCP 和 TLS 握手耗时，以及 TCP 慢启动过程给流量带来的影响；</li>
+<li><em>队头阻塞问题</em>，同一连接只能在完成一个 HTTP 事务（请求和响应）后，才能处理下一个事务；</li>
+<li><em>HTTP 头部巨大且重复</em>，由于 HTTP 协议是无状态的，每一个请求都得携带 HTTP 头部，特别是对于有携带 Cookie 的头部，而 Cookie 的大小通常很大；</li>
+<li><em>不支持服务器推送消息</em>，因此当客户端需要获取通知时，只能通过定时器不断地拉取消息，这无疑浪费大量了带宽和服务器资源。</li>
+</ul>
+<p>为了解决 HTTP&#x2F;1.1 性能问题，具体的优化手段你可以看这篇文章「<a target="_blank" rel="noopener" href="https://xiaolincoding.com/network/2_http/http_optimize.html">HTTP&#x2F;1.1 如何优化？ (opens new window)</a>」，这里我举例几个常见的优化手段：</p>
+<ul>
+<li>将多张小图合并成一张大图供浏览器 JavaScript 来切割使用，这样可以将多个请求合并成一个请求，但是带来了新的问题，当某张小图片更新了，那么需要重新请求大图片，浪费了大量的网络带宽；</li>
+<li>将图片的二进制数据通过 Base64 编码后，把编码数据嵌入到 HTML 或 CSS 文件中，以此来减少网络请求次数；</li>
+<li>将多个体积较小的 JavaScript 文件使用 Webpack 等工具打包成一个体积更大的 JavaScript 文件，以一个请求替代了很多个请求，但是带来的问题，当某个 js 文件变化了，需要重新请求同一个包里的所有 js 文件；</li>
+<li>将同一个页面的资源分散到不同域名，提升并发连接上限，因为浏览器通常对同一域名的 HTTP 连接最大只能是 6 个；</li>
+</ul>
+<p>尽管对 HTTP&#x2F;1.1 协议的优化手段如此之多，但是效果还是不尽人意，因为这些手段都是对 HTTP&#x2F;1.1 协议的“外部”做优化，<strong>而一些关键的地方是没办法优化的，比如请求-响应模型、头部巨大且重复、并发连接耗时、服务器不能主动推送等，要改变这些必须重新设计 HTTP 协议，于是 HTTP&#x2F;2 就出来了！</strong></p>
+<h2 id="兼容-HTTP-1-1"><a href="#兼容-HTTP-1-1" class="headerlink" title="兼容 HTTP&#x2F;1.1"></a>兼容 HTTP&#x2F;1.1</h2><p>HTTP&#x2F;2 出来的目的是为了改善 HTTP 的性能。协议升级有一个很重要的地方，就是要<strong>兼容</strong>老版本的协议，否则新协议推广起来就相当困难，所幸 HTTP&#x2F;2 做到了兼容 HTTP&#x2F;1.1。</p>
+<p>那么，HTTP&#x2F;2 是怎么做的呢？</p>
+<p>第一点，HTTP&#x2F;2 没有在 URI 里引入新的协议名，仍然用「http:&#x2F;&#x2F;」表示明文协议，用「https:&#x2F;&#x2F;」表示加密协议，于是只需要浏览器和服务器在背后自动升级协议，这样可以让用户意识不到协议的升级，很好的实现了协议的平滑升级。</p>
+<p>第二点，只在应用层做了改变，还是基于 TCP 协议传输，应用层方面为了保持功能上的兼容，HTTP&#x2F;2 把 HTTP 分解成了「语义」和「语法」两个部分，「语义」层不做改动，与 HTTP&#x2F;1.1 完全一致，比如请求方法、状态码、头字段等规则保留不变。</p>
+<p>但是，HTTP&#x2F;2 在「语法」层面做了很多改造，基本改变了 HTTP 报文的传输格式。</p>
+<h2 id="头部压缩"><a href="#头部压缩" class="headerlink" title="头部压缩"></a>头部压缩</h2><p>HTTP 协议的报文是由「Header + Body」构成的，对于 Body 部分，HTTP&#x2F;1.1 协议可以使用头字段 「Content-Encoding」指定 Body 的压缩方式，比如用 gzip 压缩，这样可以节约带宽，但报文中的另外一部分 Header，是没有针对它的优化手段。</p>
+<p>HTTP&#x2F;1.1 报文中 Header 部分存在的问题：</p>
+<ul>
+<li>含很多固定的字段，比如 Cookie、User Agent、Accept 等，这些字段加起来也高达几百字节甚至上千字节，所以有必要<strong>压缩</strong>；</li>
+<li>大量的请求和响应的报文里有很多字段值都是重复的，这样会使得大量带宽被这些冗余的数据占用了，所以有必须要<strong>避免重复性</strong>；</li>
+<li>字段是 ASCII 编码的，虽然易于人类观察，但效率低，所以有必要改成<strong>二进制编码</strong>；</li>
+</ul>
+<p>HTTP&#x2F;2 对 Header 部分做了大改造，把以上的问题都解决了。</p>
+<p>HTTP&#x2F;2 没使用常见的 gzip 压缩方式来压缩头部，而是开发了 <strong>HPACK</strong> 算法，HPACK 算法主要包含三个组成部分：</p>
+<ul>
+<li>静态字典；</li>
+<li>动态字典；</li>
+<li>Huffman 编码（压缩算法）；</li>
+</ul>
+<p>客户端和服务器两端都会建立和维护「<strong>字典</strong>」，用长度较小的索引号表示重复的字符串，再用 Huffman 编码压缩数据，<strong>可达到 50%~90% 的高压缩率</strong>。</p>
+<h3 id="静态表编码"><a href="#静态表编码" class="headerlink" title="静态表编码"></a>静态表编码</h3><p>HTTP&#x2F;2 为高频出现在头部的字符串和字段建立了一张<strong>静态表</strong>，它是写入到 HTTP&#x2F;2 框架里的，不会变化的，静态表里共有 <code>61</code> 组，如下图：</p>
+<p><img src="/img/loading1.gif" data-original="/2025/10/06/network_https_nb/image-20240105142818571.webp"></p>
+<p>表中的 <code>Index</code> 表示索引（Key），<code>Header Value</code> 表示索引对应的 Value，<code>Header Name</code> 表示字段的名字，比如 Index 为 2 代表 GET，Index 为 8 代表状态码 200。</p>
+<p>你可能注意到，表中有的 Index 没有对应的 Header Value，这是因为这些 Value 并不是固定的而是变化的，这些 Value 都会经过 Huffman 编码后，才会发送出去。</p>
+<p>这么说有点抽象，我们来看个具体的例子，下面这个 <code>server</code> 头部字段，在 HTTP&#x2F;1.1 的形式如下：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">server: nghttpx\r\n</span><br></pre></td></tr></table></figure>
+
+<p>算上冒号空格和末尾的<code>\r\n</code>，共占用了 17 字节，<strong>而使用了静态表和 Huffman 编码，可以将它压缩成 8 字节，压缩率大概 47%</strong>。</p>
+<p>我抓了个 HTTP&#x2F;2 协议的网络包，你可以从下图看到，高亮部分就是 <code>server</code> 头部字段，只用了 8 个字节来表示 <code>server</code> 头部数据。</p>
+<p><img src="/img/loading1.gif" data-original="/2025/10/06/network_https_nb/image-20240105142843113.webp"></p>
+<p>根据 RFC7541 规范，如果头部字段属于静态表范围，并且 Value 是变化，那么它的 HTTP&#x2F;2 头部前 2 位固定为 <code>01</code>，所以整个头部格式如下图：</p>
+<p><img src="/img/loading1.gif" data-original="/2025/10/06/network_https_nb/image-20240105142857712.webp"></p>
+<p>HTTP&#x2F;2 头部由于基于<strong>二进制编码</strong>，就不需要冒号空格和末尾的\r\n作为分隔符，于是改用表示字符串长度（Value Length）来分割 Index 和 Value。</p>
+<p>接下来，根据这个头部格式来分析上面抓包的 <code>server</code> 头部的二进制数据。</p>
+<p>首先，从静态表中能查到 <code>server</code> 头部字段的 Index 为 54，二进制为 110110，再加上固定 01，头部格式第 1 个字节就是 <code>01110110</code>，这正是上面抓包标注的红色部分的二进制数据。</p>
+<p>然后，第二个字节的首个比特位表示 Value 是否经过 Huffman 编码，剩余的 7 位表示 Value 的长度，比如这次例子的第二个字节为 <code>10000110</code>，首位比特位为 1 就代表 Value 字符串是经过 Huffman 编码的，经过 Huffman 编码的 Value 长度为 6。</p>
+<p>最后，字符串 <code>nghttpx</code> 经过 Huffman 编码后压缩成了 6 个字节，Huffman 编码的原理是将高频出现的信息用「较短」的编码表示，从而缩减字符串长度。</p>
+<p>于是，在统计大量的 HTTP 头部后，HTTP&#x2F;2 根据出现频率将 ASCII 码编码为了 Huffman 编码表，可以在 RFC7541 文档找到这张<strong>静态 Huffman 表</strong>，我就不把表的全部内容列出来了，我只列出字符串 <code>nghttpx</code> 中每个字符对应的 Huffman 编码，如下图：</p>
+<p><img src="/img/loading1.gif" data-original="/2025/10/06/network_https_nb/image-20240105142917193.webp"></p>
+<p>通过查表后，字符串 <code>nghttpx</code> 的 Huffman 编码在下图看到，共 6 个字节，每一个字符的 Huffman 编码，我用相同的颜色将他们对应起来了，最后的 7 位是补位的。</p>
+<p><img src="/img/loading1.gif" data-original="/2025/10/06/network_https_nb/image-20240105142933915.webp"></p>
+<p>最终，<code>server</code> 头部的二进制数据对应的静态头部格式如下：</p>
+<p><img src="/img/loading1.gif" data-original="/2025/10/06/network_https_nb/image-20240105142949762.webp"></p>
+<h3 id="动态表编码"><a href="#动态表编码" class="headerlink" title="动态表编码"></a>动态表编码</h3><p>静态表只包含了 61 种高频出现在头部的字符串，不在静态表范围内的头部字符串就要自行构建<strong>动态表</strong>，它的 Index 从 <code>62</code> 起步，会在编码解码的时候随时更新。</p>
+<p>比如，第一次发送时头部中的「<code>User-Agent</code> 」字段数据有上百个字节，经过 Huffman 编码发送出去后，客户端和服务器双方都会更新自己的动态表，添加一个新的 Index 号 62。<strong>那么在下一次发送的时候，就不用重复发这个字段的数据了，只用发 1 个字节的 Index 号就好了，因为双方都可以根据自己的动态表获取到字段的数据</strong>。</p>
+<p>所以，使得动态表生效有一个前提：<strong>必须同一个连接上，重复传输完全相同的 HTTP 头部</strong>。如果消息字段在 1 个连接上只发送了 1 次，或者重复传输时，字段总是略有变化，动态表就无法被充分利用了。</p>
+<p>因此，随着在同一 HTTP&#x2F;2 连接上发送的报文越来越多，客户端和服务器双方的「字典」积累的越来越多，理论上最终每个头部字段都会变成 1 个字节的 Index，这样便避免了大量的冗余数据的传输，大大节约了带宽。</p>
+<p>理想很美好，现实很骨感。动态表越大，占用的内存也就越大，如果占用了太多内存，是会影响服务器性能的，因此 Web 服务器都会提供类似 <code>http2_max_requests</code> 的配置，用于限制一个连接上能够传输的请求数量，避免动态表无限增大，请求数量到达上限后，就会关闭 HTTP&#x2F;2 连接来释放内存。</p>
+<p>综上，HTTP&#x2F;2 头部的编码通过「静态表、动态表、Huffman 编码」共同完成的。</p>
+<p><img src="/img/loading1.gif" data-original="/2025/10/06/network_https_nb/image-20240105143006681.webp"></p>
+<h2 id="二进制帧"><a href="#二进制帧" class="headerlink" title="二进制帧"></a>二进制帧</h2><p>HTTP&#x2F;2 厉害的地方在于将 HTTP&#x2F;1 的文本格式改成二进制格式传输数据，极大提高了 HTTP 传输效率，而且二进制数据使用位运算能高效解析。</p>
+<p>你可以从下图看到，HTTP&#x2F;1.1 的响应和 HTTP&#x2F;2 的区别：</p>
+<p><img src="/img/loading1.gif" data-original="/2025/10/06/network_https_nb/%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%B8%A7.webp"></p>
+<p>HTTP&#x2F;2 把响应报文划分成了两类<strong>帧（Frame）</strong>，图中的 HEADERS（首部）和 DATA（消息负载） 是帧的类型，也就是说一条 HTTP 响应，划分成了两类帧来传输，并且采用二进制来编码。</p>
+<p>比如状态码 200 ，在 HTTP&#x2F;1.1 是用 ‘2’’0’’0’ 三个字符来表示（二进制：00110010 00110000 00110000），共用了 3 个字节，如下图：</p>
+<p><img src="/img/loading1.gif" data-original="/http1.webp"></p>
+<p>在 HTTP&#x2F;2 对于状态码 200 的二进制编码是 10001000，只用了 1 字节就能表示，相比于 HTTP&#x2F;1.1 节省了 2 个字节，如下图：</p>
+<p><img src="/img/loading1.gif" data-original="/2025/10/06/network_https_nb/h2c.webp"></p>
+<p>Header: :status: 200 OK 的编码内容为：1000 1000，那么表达的含义是什么呢？</p>
+<p><img src="/img/loading1.gif" data-original="/2025/10/06/network_https_nb/index.webp"></p>
+<ol>
+<li>最前面的 1 标识该 Header 是静态表中已经存在的 KV。</li>
+<li>我们再回顾一下之前的静态表内容，“:status: 200 OK”其静态表编码是 8，即 1000。</li>
+</ol>
+<p>因此，整体加起来就是 1000 1000。</p>
+<p>HTTP&#x2F;2 <strong>二进制帧</strong>的结构如下图：</p>
+<p><img src="/img/loading1.gif" data-original="/2025/10/06/network_https_nb/image-20240105143208962.webp"></p>
+<p>帧头（Frame Header）很小，只有 9 个字节，帧开头的前 3 个字节表示帧数据（Frame Playload）的<strong>长度</strong>。</p>
+<p>帧长度后面的一个字节是表示<strong>帧的类型</strong>，HTTP&#x2F;2 总共定义了 10 种类型的帧，一般分为<strong>数据帧</strong>和<strong>控制帧</strong>两类，如下表格：</p>
+<p><img src="/img/loading1.gif" data-original="/2025/10/06/network_https_nb/image-20240105143150947.webp"></p>
+<p>帧类型后面的一个字节是<strong>标志位</strong>，可以保存 8 个标志位，用于携带简单的控制信息，比如：</p>
+<ul>
+<li><strong>END_HEADERS</strong> 表示头数据结束标志，相当于 HTTP&#x2F;1 里头后的空行（“\r\n”）；</li>
+<li><strong>END_Stream</strong> 表示单方向数据发送结束，后续不会再有数据帧。</li>
+<li><strong>PRIORITY</strong> 表示流的优先级；</li>
+</ul>
+<p>帧头的最后 4 个字节是<strong>流标识符</strong>（Stream ID），但最高位被保留不用，只有 31 位可以使用，因此流标识符的最大值是 2^31，大约是 21 亿，它的作用是用来标识该 Frame 属于哪个 Stream，接收方可以根据这个信息从乱序的帧里找到相同 Stream ID 的帧，从而有序组装信息。</p>
+<p>最后面就是<strong>帧数据</strong>了，它存放的是通过 <strong>HPACK 算法</strong>压缩过的 HTTP 头部和包体。</p>
+<h2 id="并发传输"><a href="#并发传输" class="headerlink" title="并发传输"></a>并发传输</h2><p>知道了 HTTP&#x2F;2 的帧结构后，我们再来看看它是如何实现<strong>并发传输</strong>的。</p>
+<p>我们都知道 HTTP&#x2F;1.1 的实现是基于请求-响应模型的。同一个连接中，HTTP 完成一个事务（请求与响应），才能处理下一个事务，也就是说在发出请求等待响应的过程中，是没办法做其他事情的，如果响应迟迟不来，那么后续的请求是无法发送的，也造成了<strong>队头阻塞</strong>的问题。</p>
+<p>而 HTTP&#x2F;2 就很牛逼了，通过 Stream 这个设计，<strong>多个 Stream 复用一条 TCP 连接，达到并发的效果</strong>，解决了 HTTP&#x2F;1.1 队头阻塞的问题，提高了 HTTP 传输的吞吐量。</p>
+<p>为了理解 HTTP&#x2F;2 的并发是怎样实现的，我们先来理解 HTTP&#x2F;2 中的 Stream、Message、Frame 这 3 个概念。</p>
+<p><img src="/img/loading1.gif" data-original="/2025/10/06/network_https_nb/image-20240105143224839.webp"></p>
+<p>你可以从上图中看到：</p>
+<ul>
+<li>1 个 TCP 连接包含一个或者多个 Stream，Stream 是 HTTP&#x2F;2 并发的关键技术；</li>
+<li>Stream 里可以包含 1 个或多个 Message，Message 对应 HTTP&#x2F;1 中的请求或响应，由 HTTP 头部和包体构成；</li>
+<li>Message 里包含一条或者多个 Frame，Frame 是 HTTP&#x2F;2 最小单位，以二进制压缩格式存放 HTTP&#x2F;1 中的内容（头部和包体）；</li>
+</ul>
+<p>因此，我们可以得出个结论：多个 Stream 跑在一条 TCP 连接，同一个 HTTP 请求与响应是跑在同一个 Stream 中，HTTP 消息可以由多个 Frame 构成， 一个 Frame 可以由多个 TCP 报文构成。</p>
+<p><img src="/img/loading1.gif" data-original="/2025/10/06/network_https_nb/image-20240105143239921.webp"></p>
+<p>在 HTTP&#x2F;2 连接上，<strong>不同 Stream 的帧是可以乱序发送的（因此可以并发不同的 Stream ）</strong>，因为每个帧的头部会携带 Stream ID 信息，所以接收端可以通过 Stream ID 有序组装成 HTTP 消息，而<strong>同一 Stream 内部的帧必须是严格有序的</strong>。</p>
+<p>比如下图，服务端<strong>并行交错地</strong>发送了两个响应： Stream 1 和 Stream 3，这两个 Stream 都是跑在一个 TCP 连接上，客户端收到后，会根据相同的 Stream ID 有序组装成 HTTP 消息。</p>
+<p><img src="/img/loading1.gif" data-original="/http2%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8.webp"></p>
+<p>客户端和服务器<strong>双方都可以建立 Stream</strong>，因为服务端可以主动推送资源给客户端，客户端建立的 Stream 必须是奇数号，而服务器建立的 Stream 必须是偶数号。</p>
+<p>比如下图，Stream 1 是客户端向服务端请求的资源，属于客户端建立的 Stream，所以该 Stream 的 ID 是奇数（数字 1）；Stream 2 和 4 都是服务端主动向客户端推送的资源，属于服务端建立的 Stream，所以这两个 Stream 的 ID 是偶数（数字 2 和 4）。</p>
+<p><img src="/img/loading1.gif" data-original="/2025/10/06/network_https_nb/image-20240105143421889.webp"></p>
+<p>同一个连接中的 Stream ID 是不能复用的，只能顺序递增，所以当 Stream ID 耗尽时，需要发一个控制帧<code>GOAWAY</code>，用来关闭 TCP 连接。</p>
+<p>在 Nginx 中，可以通过 <code>http2_max_concurrent_Streams</code> 配置来设置 Stream 的上限，默认是 128 个。</p>
+<p>HTTP&#x2F;2 通过 Stream 实现的并发，比 HTTP&#x2F;1.1 通过 TCP 连接实现并发要牛逼的多，<strong>因为当 HTTP&#x2F;2 实现 100 个并发 Stream 时，只需要建立一次 TCP 连接，而 HTTP&#x2F;1.1 需要建立 100 个 TCP 连接，每个 TCP 连接都要经过 TCP 握手、慢启动以及 TLS 握手过程，这些都是很耗时的。</strong></p>
+<p>HTTP&#x2F;2 还可以对每个 Stream 设置不同<strong>优先级</strong>，帧头中的「标志位」可以设置优先级，比如客户端访问 HTML&#x2F;CSS 和图片资源时，希望服务器先传递 HTML&#x2F;CSS，再传图片，那么就可以通过设置 Stream 的优先级来实现，以此提高用户体验。</p>
+<h2 id="服务器主动推送资源"><a href="#服务器主动推送资源" class="headerlink" title="服务器主动推送资源"></a>服务器主动推送资源</h2><p>HTTP&#x2F;1.1 不支持服务器主动推送资源给客户端，都是由客户端向服务器发起请求后，才能获取到服务器响应的资源。</p>
+<p>比如，客户端通过 HTTP&#x2F;1.1 请求从服务器那获取到了 HTML 文件，而 HTML 可能还需要依赖 CSS 来渲染页面，这时客户端还要再发起获取 CSS 文件的请求，需要两次消息往返，如下图左边部分：</p>
+<p><img src="/img/loading1.gif" data-original="/2025/10/06/network_https_nb/image-20240105143315109.webp"></p>
+<p>如上图右边部分，在 HTTP&#x2F;2 中，客户端在访问 HTML 时，服务器可以直接主动推送 CSS 文件，减少了消息传递的次数。</p>
+<p>在 Nginx 中，如果你希望客户端访问 &#x2F;test.html 时，服务器直接推送 &#x2F;test.css，那么可以这么配置：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">location /test.html &#123; </span><br><span class="line">  http2_push /test.css; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>那 HTTP&#x2F;2 的推送是怎么实现的？</p>
+<p>客户端发起的请求，必须使用的是奇数号 Stream，服务器主动的推送，使用的是偶数号 Stream。服务器在推送资源时，会通过 <code>PUSH_PROMISE</code> 帧传输 HTTP 头部，并通过帧中的 <code>Promised Stream ID</code> 字段告知客户端，接下来会在哪个偶数号 Stream 中发送包体。</p>
+<p><img src="/img/loading1.gif" data-original="/2025/10/06/network_https_nb/image-20240105143338707.webp"></p>
+<p>如上图，在 Stream 1 中通知客户端 CSS 资源即将到来，然后在 Stream 2 中发送 CSS 资源，注意 Stream 1 和 2 是可以<strong>并发</strong>的。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>HTTP&#x2F;2 协议其实还有很多内容，比如流控制、流状态、依赖关系等等。</p>
+<p>这次主要介绍了关于 HTTP&#x2F;2 是如何提升性能的几个方向，它相比 HTTP&#x2F;1 大大提高了传输效率、吞吐能力。</p>
+<p>第一点，对于常见的 HTTP 头部通过<strong>静态表和 Huffman 编码</strong>的方式，将体积压缩了近一半，而且针对后续的请求头部，还可以建立<strong>动态表</strong>，将体积压缩近 90%，大大提高了编码效率，同时节约了带宽资源。</p>
+<p>不过，动态表并非可以无限增大， 因为动态表是会占用内存的，动态表越大，内存也越大，容易影响服务器总体的并发能力，因此服务器需要限制 HTTP&#x2F;2 连接时长或者请求次数。</p>
+<p>第二点，<strong>HTTP&#x2F;2 实现了 Stream 并发</strong>，多个 Stream 只需复用 1 个 TCP 连接，节约了 TCP 和 TLS 握手时间，以及减少了 TCP 慢启动阶段对流量的影响。不同的 Stream ID 可以并发，即使乱序发送帧也没问题，比如发送 A 请求帧 1 -&gt; B 请求帧 1 -&gt; A 请求帧 2 -&gt; B 请求帧2，但是同一个 Stream 里的帧必须严格有序。</p>
+<p>另外，可以根据资源的渲染顺序来设置 Stream 的<strong>优先级</strong>，从而提高用户体验。</p>
+<p>第三点，<strong>服务器支持主动推送资源</strong>，大大提升了消息的传输性能，服务器推送资源时，会先发送 PUSH_PROMISE 帧，告诉客户端接下来在哪个 Stream 发送资源，然后用偶数号 Stream 发送资源给客户端。</p>
+<p>HTTP&#x2F;2 通过 Stream 的并发能力，解决了 HTTP&#x2F;1 队头阻塞的问题，看似很完美了，但是 HTTP&#x2F;2 还是存在“队头阻塞”的问题，只不过问题不是在 HTTP 这一层面，而是在 TCP 这一层。</p>
+<p><strong>HTTP&#x2F;2 是基于 TCP 协议来传输数据的，TCP 是字节流协议，TCP 层必须保证收到的字节数据是完整且连续的，这样内核才会将缓冲区里的数据返回给 HTTP 应用，那么当「前 1 个字节数据」没有到达时，后收到的字节数据只能存放在内核缓冲区里，只有等到这 1 个字节数据到达时，HTTP&#x2F;2 应用层才能从内核中拿到数据，这就是 HTTP&#x2F;2 队头阻塞问题。</strong></p>
+<p>有没有什么解决方案呢？既然是 TCP 协议自身的问题，那干脆放弃 TCP 协议，转而使用 UDP 协议作为传输层协议，这个大胆的决定，HTTP&#x2F;3 协议做了！</p>
+<p><img src="/img/loading1.gif" data-original="/2025/10/06/network_https_nb/image-20240105143355912.webp"></p>
+<p>参考资料：</p>
+<ol><li>https://developers.google.com/web/fundamentals/performance/http2</li> <li>https://http2.akamai.com/demo</li> <li>https://tools.ietf.org/html/rfc7541</li></ol>
+
+<blockquote>
+<p>转载：<a target="_blank" rel="noopener" href="https://xiaolincoding.com/network/2_http/http2.html">HTTP&#x2F;2 牛逼在哪？</a></p>
+</blockquote>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://colin-cloud.github.io">Ashery</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://colin-cloud.github.io/2025/10/06/network_https_nb/">https://colin-cloud.github.io/2025/10/06/network_https_nb/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://colin-cloud.github.io" target="_blank">我的仓库 | Ashery</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a><a class="post-meta__tags" href="/tags/HTTP/">HTTP</a></div><div class="post-share"><div class="social-share" data-image="/img/avatar.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2025/10/06/network_https_optimize/" title="计算机网络_HTTP篇_HTTPS 如何优化？"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">计算机网络_HTTP篇_HTTPS 如何优化？</div></div><div class="info-2"><div class="info-item-1">HTTPS 如何优化？由裸数据传输的 HTTP 协议转成加密数据传输的 HTTPS 协议，给应用数据套了个「保护伞」，提高安全性的同时也带来了性能消耗。 因为 HTTPS 相比 HTTP 协议多一个 TLS 协议握手过程，目的是为了通过非对称加密握手协商或者交换出对称加密密钥，这个过程最长可以花费掉 2 RTT，接着后续传输的应用数据都得使用对称加密密钥来加密&#x2F;解密。 为了数据的安全性，我们不得不使用 HTTPS 协议，至今大部分网址都已从 HTTP 迁移至 HTTPS 协议，因此针对 HTTPS 的优化是非常重要的。 这次，就从多个角度来优化 HTTPS。  分析性能损耗既然要对 HTTPS 优化，那得清楚哪些步骤会产生性能消耗，再对症下药。 产生性能消耗的两个环节：  第一个环节， TLS 协议握手过程； 第二个环节，握手后的对称加密报文传输。  对于第二环节，现在主流的对称加密算法 AES、ChaCha20 性能都是不错的，而且一些 CPU 厂商还针对它们做了硬件级别的优化，因此这个环节的性能消耗可以说非常地小。 而第一个环节，TLS 协议握手过程不仅增加了网络延...</div></div></div></a><a class="pagination-related" href="/2025/10/06/network_http_websocket/" title="计算机网络_HTTP篇_既然有 HTTP 协议，为什么还要有 WebSocket？"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">计算机网络_HTTP篇_既然有 HTTP 协议，为什么还要有 WebSocket？</div></div><div class="info-2"><div class="info-item-1">既然有 HTTP 协议，为什么还要有 WebSocket？平时我们打开网页，比如购物网站某宝。都是点一下「列表商品」，跳转一下网页就到了「商品详情」。 从 HTTP 协议的角度来看，就是点一下网页上的某个按钮，前端发一次 HTTP请 求，网站返回一次 HTTP 响应。这种由客户端主动请求，服务器响应的方式也满足大部分网页的功能场景。 但有没有发现，这种情况下，服务器从来就「不会主动」给客户端发一次消息。就像你喜欢的女生从来不会主动找你一样。 但如果现在，你在刷网页的时候「右下角」突然弹出一个小广告，提示你【一个人在家偷偷才能玩哦】。 求知，好学，勤奋，这些刻在你 DNA 里的东西都动起来了。 你点开后发现。 长相平平无奇的古某提示你”道士 9 条狗，全服横着走”。 影帝某辉老师跟你说”系兄弟就来砍我”。  来都来了，你就选了个角色进到了游戏界面里。  这时候，上来就是一个小怪，从远处走来，然后疯狂拿木棒子抽你。 你全程没点任何一次鼠标。服务器就自动将怪物的移动数据和攻击数据源源不断发给你了。 这….太暖心了。 感动之余，问题就来了， 像这种看起来服务器主动发消息给客户端的场景，是...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2025/10/06/network_http3/" title="计算机网络_HTTP篇_HTTP&#x2F;3 强势来袭"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-10-06</div><div class="info-item-2">计算机网络_HTTP篇_HTTP&#x2F;3 强势来袭</div></div><div class="info-2"><div class="info-item-1">HTTP&#x2F;3 强势来袭HTTP&#x2F;3 现在（2022 年 5 月）还没正式推出，不过自 2017 年起，HTTP&#x2F;3 已经更新到 34 个草案了，基本的特性已经确定下来了，对于包格式可能后续会有变化。 所以，这次 HTTP&#x2F;3 介绍不会涉及到包格式，只说它的特性。  美中不足的 HTTP&#x2F;2HTTP&#x2F;2 通过头部压缩、二进制编码、多路复用、服务器推送等新特性大幅度提升了 HTTP&#x2F;1.1 的性能，而美中不足的是 HTTP&#x2F;2 协议是基于 TCP 实现的，于是存在的缺陷有三个。  队头阻塞； TCP 与 TLS 的握手时延迟； 网络迁移需要重新连接；  队头阻塞HTTP&#x2F;2 多个请求是跑在一个 TCP 连接中的，那么当 TCP 丢包时，整个 TCP 都要等待重传，那么就会阻塞该 TCP 连接中的所有请求。 比如下图中，Stream 2 有一个 TCP 报文丢失了，那么即使收到了 Stream 3 和 Stream 4 的 TCP 报文，应用层也是无法读取读取的，相当于阻塞了 Stream 3 和...</div></div></div></a><a class="pagination-related" href="/2025/10/06/network_http_interview/" title="计算机网络_HTTP篇_HTTP 常见面试题"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-10-06</div><div class="info-item-2">计算机网络_HTTP篇_HTTP 常见面试题</div></div><div class="info-2"><div class="info-item-1">HTTP 常见面试题在面试过程中，HTTP 被提问的概率还是比较高的。 我搜集了 6 大类 HTTP 面试常问的题目，同时这 6 大类题跟 HTTP 的发展和演变关联性是比较大的，通过问答 + 图解的形式由浅入深的方式帮助大家进一步的学习和理解 HTTP。  HTTP 基本概念 Get 与 Post HTTP 特性 HTTP 缓存技术 HTTPS 与 HTTP HTTP&#x2F;1.1、HTTP&#x2F;2、HTTP&#x2F;3 演变   HTTP 基本概念HTTP 是什么？HTTP 是超文本传输协议，也就是HyperText Transfer Protocol。  能否详细解释「超文本传输协议」？  HTTP 的名字「超文本协议传输」，它可以拆成三个部分：  超文本 传输 协议   1. 「协议」 在生活中，我们也能随处可见「协议」，例如：  刚毕业时会签一个「三方协议」； 找房子时会签一个「租房协议」；   生活中的协议，本质上与计算机中的协议是相同的，协议的特点：  「协」字，代表的意思是必须有两个以上的参与者。例如三方协议里的参与者有三个：你、公司、学校三个；租房协...</div></div></div></a><a class="pagination-related" href="/2025/10/06/network_http_optimize/" title="计算机网络_HTTP篇_HTTP&#x2F;1.1 如何优化？"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-10-06</div><div class="info-item-2">计算机网络_HTTP篇_HTTP&#x2F;1.1 如何优化？</div></div><div class="info-2"><div class="info-item-1">HTTP&#x2F;1.1 如何优化？问你一句：「你知道 HTTP&#x2F;1.1 该如何优化吗？」 我们可以从下面这三种优化思路来优化 HTTP&#x2F;1.1 协议：  尽量避免发送 HTTP 请求； 在需要发送 HTTP 请求时，考虑如何减少请求次数； 减少服务器的 HTTP 响应的数据大小；  下面，就针对这三种思路具体看看有哪些优化方法。  如何避免发送 HTTP 请求？这个思路你看到是不是觉得很奇怪，不发送 HTTP 请求，那客户端还怎么和服务器交互数据？小林你这不是耍流氓嘛？ 冷静冷静，你说的没错，客户端当然要向服务器发送请求的。 但是，对于一些具有重复性的 HTTP 请求，比如每次请求得到的数据都一样的，我们可以把这对「请求-响应」的数据都缓存在本地，那么下次就直接读取本地的数据，不必在通过网络获取服务器的响应了，这样的话 HTTP&#x2F;1.1 的性能肯定肉眼可见的提升。 所以，避免发送 HTTP 请求的方法就是通过缓存技术，HTTP 设计者早在之前就考虑到了这点，因此 HTTP 协议的头部有不少是针对缓存的字段。 那缓存是如何做到的呢？ 客户端会把第一...</div></div></div></a><a class="pagination-related" href="/2025/10/06/network_http_rpc/" title="计算机网络_HTTP篇_既然有 HTTP 协议，为什么还要有 RPC？"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-10-06</div><div class="info-item-2">计算机网络_HTTP篇_既然有 HTTP 协议，为什么还要有 RPC？</div></div><div class="info-2"><div class="info-item-1">既然有 HTTP 协议，为什么还要有 RPC？我想起了我刚工作的时候，第一次接触 RPC 协议，当时就很懵，我 HTTP 协议用的好好的，为什么还要用 RPC 协议？ 于是就到网上去搜。 不少解释显得非常官方，我相信大家在各种平台上也都看到过，解释了又好像没解释，都在用一个我们不认识的概念去解释另外一个我们不认识的概念，懂的人不需要看，不懂的人看了还是不懂。 这种看了，又好像没看的感觉，云里雾里的很难受，我懂。 为了避免大家有强烈的审丑疲劳，今天我们来尝试重新换个方式讲一讲。 从 TCP 聊起作为一个程序员，假设我们需要在 A 电脑的进程发一段数据到 B 电脑的进程，我们一般会在代码里使用 Socket 进行编程。 这时候，我们可选项一般也就 TCP 和 UDP 二选一。TCP 可靠，UDP 不可靠。除非是马总这种神级程序员（早期 QQ 大量使用 UDP），否则，只要稍微对可靠性有些要求，普通人一般无脑选 TCP 就对了。 类似下面这样。 fd = socket(AF_INET,SOCK_STREAM,0);  其中 SOCK_STREAM，是指使用字节流传输数据，说白了就是 T...</div></div></div></a><a class="pagination-related" href="/2025/10/06/network_https_ecdhe/" title="计算机网络_HTTP篇_HTTPS ECDHE 握手解析"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-10-06</div><div class="info-item-2">计算机网络_HTTP篇_HTTPS ECDHE 握手解析</div></div><div class="info-2"><div class="info-item-1">HTTPS ECDHE 握手解析HTTPS 常用的密钥交换算法有两种，分别是 RSA 和 ECDHE 算法。 其中，RSA 是比较传统的密钥交换算法，它不具备前向安全的性质，因此现在很少服务器使用的。而 ECDHE 算法具有前向安全，所以被广泛使用。 我在上一篇已经介绍了 RSA 握手的过程 (opens new window)，今天这一篇就「从理论再到实战抓包」介绍 ECDHE 算法。  离散对数ECDHE 密钥协商算法是 DH 算法演进过来的，所以我们先从 DH 算法说起。 DH 算法是非对称加密算法， 因此它可以用于密钥交换，该算法的核心数学思想是离散对数。 是不是听到这个数学概念就怂了？不怕，这次不会说离散对数推导的过程，只简单提一下它的数学公式。 离散对数是「离散 + 对数」的两个数学概念的组合，所以我们先来复习一遍对数。 要说起对数，必然要说指数，因为它们是互为反函数，指数就是幂运算，对数是指数的逆运算。 举个栗子，如果以 2 作为底数，那么指数和对数运算公式，如下图所示：  那么对于底数为 2 的时候， 32 的对数是 5，64 的对数是 6，计算过程如下：  对数...</div></div></div></a><a class="pagination-related" href="/2025/10/06/network_http_websocket/" title="计算机网络_HTTP篇_既然有 HTTP 协议，为什么还要有 WebSocket？"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-10-06</div><div class="info-item-2">计算机网络_HTTP篇_既然有 HTTP 协议，为什么还要有 WebSocket？</div></div><div class="info-2"><div class="info-item-1">既然有 HTTP 协议，为什么还要有 WebSocket？平时我们打开网页，比如购物网站某宝。都是点一下「列表商品」，跳转一下网页就到了「商品详情」。 从 HTTP 协议的角度来看，就是点一下网页上的某个按钮，前端发一次 HTTP请 求，网站返回一次 HTTP 响应。这种由客户端主动请求，服务器响应的方式也满足大部分网页的功能场景。 但有没有发现，这种情况下，服务器从来就「不会主动」给客户端发一次消息。就像你喜欢的女生从来不会主动找你一样。 但如果现在，你在刷网页的时候「右下角」突然弹出一个小广告，提示你【一个人在家偷偷才能玩哦】。 求知，好学，勤奋，这些刻在你 DNA 里的东西都动起来了。 你点开后发现。 长相平平无奇的古某提示你”道士 9 条狗，全服横着走”。 影帝某辉老师跟你说”系兄弟就来砍我”。  来都来了，你就选了个角色进到了游戏界面里。  这时候，上来就是一个小怪，从远处走来，然后疯狂拿木棒子抽你。 你全程没点任何一次鼠标。服务器就自动将怪物的移动数据和攻击数据源源不断发给你了。 这….太暖心了。 感动之余，问题就来了， 像这种看起来服务器主动发消息给客户端的场景，是...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/loading1.gif" data-original="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Ashery</div><div class="author-info-description">记录美好生活~</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/xxxxx" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="https://blog.csdn.net/mjh1667002013" target="_blank" title="CSDN"><i class="fa fa-book-open"></i></a><a class="social-icon" href="tencent://AddContact/?fromId=45&amp;fromSubId=1&amp;subcmd=all&amp;uin=728831102&amp;website=www.oicqzone.com" target="_blank" title="QQ"><i class="fab fa-qq"></i></a><a class="social-icon" href="mailto:xxxxxx@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">我的博客~~~</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HTTP-2-%E7%89%9B%E9%80%BC%E5%9C%A8%E5%93%AA%EF%BC%9F"><span class="toc-text">HTTP&#x2F;2 牛逼在哪？</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP-1-1-%E5%8D%8F%E8%AE%AE%E7%9A%84%E6%80%A7%E8%83%BD%E9%97%AE%E9%A2%98"><span class="toc-text">HTTP&#x2F;1.1 协议的性能问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%BC%E5%AE%B9-HTTP-1-1"><span class="toc-text">兼容 HTTP&#x2F;1.1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%B4%E9%83%A8%E5%8E%8B%E7%BC%A9"><span class="toc-text">头部压缩</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E8%A1%A8%E7%BC%96%E7%A0%81"><span class="toc-text">静态表编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E8%A1%A8%E7%BC%96%E7%A0%81"><span class="toc-text">动态表编码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%B8%A7"><span class="toc-text">二进制帧</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%B6%E5%8F%91%E4%BC%A0%E8%BE%93"><span class="toc-text">并发传输</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%BB%E5%8A%A8%E6%8E%A8%E9%80%81%E8%B5%84%E6%BA%90"><span class="toc-text">服务器主动推送资源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/10/06/network_http3/" title="计算机网络_HTTP篇_HTTP/3 强势来袭">计算机网络_HTTP篇_HTTP/3 强势来袭</a><time datetime="2025-10-05T16:00:00.000Z" title="发表于 2025-10-06 00:00:00">2025-10-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/10/06/network_http_interview/" title="计算机网络_HTTP篇_HTTP 常见面试题">计算机网络_HTTP篇_HTTP 常见面试题</a><time datetime="2025-10-05T16:00:00.000Z" title="发表于 2025-10-06 00:00:00">2025-10-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/10/06/network_http_optimize/" title="计算机网络_HTTP篇_HTTP/1.1 如何优化？">计算机网络_HTTP篇_HTTP/1.1 如何优化？</a><time datetime="2025-10-05T16:00:00.000Z" title="发表于 2025-10-06 00:00:00">2025-10-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/10/06/network_http_rpc/" title="计算机网络_HTTP篇_既然有 HTTP 协议，为什么还要有 RPC？">计算机网络_HTTP篇_既然有 HTTP 协议，为什么还要有 RPC？</a><time datetime="2025-10-05T16:00:00.000Z" title="发表于 2025-10-06 00:00:00">2025-10-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/10/06/network_https_ecdhe/" title="计算机网络_HTTP篇_HTTPS ECDHE 握手解析">计算机网络_HTTP篇_HTTPS ECDHE 握手解析</a><time datetime="2025-10-05T16:00:00.000Z" title="发表于 2025-10-06 00:00:00">2025-10-06</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/bg.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 By Ashery</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.0</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="true" data-text="I,LOVE,YOU" data-fontsize="15px" data-random="true" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div>
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z\d\-\.\+]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(t.test(e.href)||r.test(e.href))&&(e.href=a.dataset.original)})});</script><script>(r=>{r.imageLazyLoadSetting.processImages=t;var a=r.imageLazyLoadSetting.isSPA,o=r.imageLazyLoadSetting.preloadRatio||1,d=i();function i(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(t){(a||t)&&(d=i());for(var e,n=0;n<d.length;n++)0<=(e=(e=d[n]).getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(r.innerHeight*o||document.documentElement.clientHeight*o)&&(()=>{var t,e,a,o,i=d[n];e=function(){d=d.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).dataset.loaded||(t.hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(a=new Image,o=t.getAttribute("data-original"),a.onload=function(){t.src=o,t.removeAttribute("data-original"),t.setAttribute("data-loaded",!0),e&&e()},a.onerror=function(){t.removeAttribute("data-original"),t.setAttribute("data-loaded",!1),t.src=o},t.src!==o&&(a.src=o)))})()}function e(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",e),r.addEventListener("resize",e),r.addEventListener("orientationchange",e)})(this);</script></body></html>

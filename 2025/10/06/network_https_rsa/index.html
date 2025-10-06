@@ -1,0 +1,293 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>计算机网络_HTTP篇_HTTPS RSA 握手解析 | 我的仓库 | Ashery</title><meta name="author" content="Ashery"><meta name="copyright" content="Ashery"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="计算机网络、HTTPS、RSA">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机网络_HTTP篇_HTTPS RSA 握手解析">
+<meta property="og:url" content="https://colin-cloud.github.io/2025/10/06/network_https_rsa/index.html">
+<meta property="og:site_name" content="我的仓库 | Ashery">
+<meta property="og:description" content="计算机网络、HTTPS、RSA">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://colin-cloud.github.io/img/avatar.jpg">
+<meta property="article:published_time" content="2025-10-05T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-10-06T14:55:31.714Z">
+<meta property="article:author" content="Ashery">
+<meta property="article:tag" content="计算机网络">
+<meta property="article:tag" content="HTTPS">
+<meta property="article:tag" content="RSA">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://colin-cloud.github.io/img/avatar.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "计算机网络_HTTP篇_HTTPS RSA 握手解析",
+  "url": "https://colin-cloud.github.io/2025/10/06/network_https_rsa/",
+  "image": "https://colin-cloud.github.io/img/avatar.jpg",
+  "datePublished": "2025-10-05T16:00:00.000Z",
+  "dateModified": "2025-10-06T14:55:31.714Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Ashery",
+      "url": "https://colin-cloud.github.io"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.jpg"><link rel="canonical" href="https://colin-cloud.github.io/2025/10/06/network_https_rsa/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '计算机网络_HTTP篇_HTTPS RSA 握手解析',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/background.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="我的仓库 | Ashery" type="application/atom+xml">
+</head><body><div id="web_bg" style="background-color: #efefef;"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/loading1.gif" data-original="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fa fa-comments-o"></i><span> 分享</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/bg.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">我的仓库 | Ashery</span></a><a class="nav-page-title" href="/"><span class="site-name">计算机网络_HTTP篇_HTTPS RSA 握手解析</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fa fa-comments-o"></i><span> 分享</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">计算机网络_HTTP篇_HTTPS RSA 握手解析</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-10-05T16:00:00.000Z" title="发表于 2025-10-06 00:00:00">2025-10-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-10-06T14:55:31.714Z" title="更新于 2025-10-06 22:55:31">2025-10-06</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">3.5k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>10分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="HTTPS-RSA-握手解析"><a href="#HTTPS-RSA-握手解析" class="headerlink" title="HTTPS RSA 握手解析"></a>HTTPS RSA 握手解析</h1><p>我前面讲，简单给大家介绍了的 HTTPS 握手过程，但是还不够细！</p>
+<p>只讲了比较基础的部分，所以这次我们再来深入一下 HTTPS，用<strong>实战抓包</strong>的方式，带大家再来窥探一次 HTTPS。</p>
+<p><img src="/img/loading1.gif" data-original="/https%E6%8F%90%E7%BA%B2.webp"></p>
+<h2 id="TLS-握手过程"><a href="#TLS-握手过程" class="headerlink" title="TLS 握手过程"></a>TLS 握手过程</h2><p>HTTP 由于是明文传输，所谓的明文，就是说客户端与服务端通信的信息都是肉眼可见的，随意使用一个抓包工具都可以截获通信的内容。</p>
+<p>所以安全上存在以下三个风险：</p>
+<ul>
+<li><em>窃听风险</em>，比如通信链路上可以获取通信内容，用户号容易没。</li>
+<li><em>篡改风险</em>，比如强制植入垃圾广告，视觉污染，用户眼容易瞎。</li>
+<li><em>冒充风险</em>，比如冒充淘宝网站，用户钱容易没。</li>
+</ul>
+<p>HTTP<strong>S</strong> 在 HTTP 与 TCP 层之间加入了 TLS 协议，来解决上述的风险。</p>
+<p><img src="/img/loading1.gif" data-original="/2025/10/06/network_https_rsa/19-HTTPS%E4%B8%8EHTTP.webp"></p>
+<p>TLS 协议是如何解决 HTTP 的风险的呢？</p>
+<ul>
+<li><em>信息加密</em>： HTTP 交互信息是被加密的，第三方就无法被窃取；</li>
+<li><em>校验机制</em>：校验信息传输过程中是否有被第三方篡改过，如果被篡改过，则会有警告提示；</li>
+<li><em>身份证书</em>：证明淘宝是真的淘宝网；</li>
+</ul>
+<p>可见，有了 TLS 协议，能保证 HTTP 通信是安全的了，那么在进行 HTTP 通信前，需要先进行 TLS 握手。TLS 的握手过程，如下图：</p>
+<p><img src="/img/loading1.gif" data-original="/2025/10/06/network_https_rsa/tls%E6%8F%A1%E6%89%8B.webp"></p>
+<p>上图简要概述了 TLS 的握手过程，其中每一个「框」都是一个记录（<em>record</em>），记录是 TLS 收发数据的基本单位，类似于 TCP 里的 segment。多个记录可以组合成一个 TCP 包发送，所以<strong>通常经过「四个消息」就可以完成 TLS 握手，也就是需要 2个 RTT       的时延</strong>，然后就可以在安全的通信环境里发送 HTTP 报文，实现 HTTPS 协议。</p>
+<p>所以可以发现，HTTPS 是应用层协议，需要先完成 TCP 连接建立，然后走 TLS 握手过程后，才能建立通信安全的连接。</p>
+<p>事实上，不同的密钥交换算法，TLS 的握手过程可能会有一些区别。</p>
+<p>这里先简单介绍下密钥交换算法，因为考虑到性能的问题，所以双方在加密应用信息时使用的是对称加密密钥，而对称加密密钥是不能被泄漏的，为了保证对称加密密钥的安全性，所以使用非对称加密的方式来保护对称加密密钥的协商，这个工作就是密钥交换算法负责的。</p>
+<p>接下来，我们就以最简单的 <code>RSA</code> 密钥交换算法，来看看它的 TLS 握手过程。</p>
+<h2 id="RSA-握手过程"><a href="#RSA-握手过程" class="headerlink" title="RSA 握手过程"></a>RSA 握手过程</h2><p>传统的 TLS 握手基本都是使用 RSA 算法来实现密钥交换的，在将 TLS 证书部署服务端时，证书文件其实就是服务端的公钥，会在 TLS 握手阶段传递给客户端，而服务端的私钥则一直留在服务端，一定要确保私钥不能被窃取。</p>
+<p>在 RSA 密钥协商算法中，客户端会生成随机密钥，并使用服务端的公钥加密后再传给服务端。根据非对称加密算法，公钥加密的消息仅能通过私钥解密，这样服务端解密后，双方就得到了相同的密钥，再用它加密应用消息。</p>
+<p>我用 Wireshark 工具抓了用 RSA 密钥交换的 TLS 握手过程，你可以从下面看到，一共经历了四次握手：</p>
+<p><img src="/img/loading1.gif" data-original="/2025/10/06/network_https_rsa/tls%E5%9B%9B%E6%AC%A1%E6%8F%A1%E6%89%8B.webp"></p>
+<p>对应 Wireshark 的抓包，我也画了一幅图，你可以从下图很清晰地看到该过程：</p>
+<p><img src="/img/loading1.gif" data-original="/https_rsa.webp"></p>
+<p>那么，接下来针对每一个 TLS 握手做进一步的介绍。</p>
+<h3 id="TLS-第一次握手"><a href="#TLS-第一次握手" class="headerlink" title="TLS 第一次握手"></a>TLS 第一次握手</h3><p>客户端首先会发一个「<strong>Client Hello</strong>」消息，字面意思我们也能理解到，这是跟服务器「打招呼」。</p>
+<p><img src="/img/loading1.gif" data-original="/2025/10/06/network_https_rsa/clienthello.webp"></p>
+<p>消息里面有客户端使用的 TLS 版本号、支持的密码套件列表，以及生成的<strong>随机数（<em>Client Random</em>）</strong>，这个随机数会被服务端保留，它是生成对称加密密钥的材料之一。</p>
+<h3 id="TLS-第二次握手"><a href="#TLS-第二次握手" class="headerlink" title="TLS 第二次握手"></a>TLS 第二次握手</h3><p>当服务端收到客户端的「Client Hello」消息后，会确认 TLS 版本号是否支持，和从密码套件列表中选择一个密码套件，以及生成<strong>随机数（*Server Random*）</strong>。</p>
+<p>接着，返回「<strong>Server Hello</strong>」消息，消息里面有服务器确认的 TLS 版本号，也给出了随机数（Server Random），然后从客户端的密码套件列表选择了一个合适的密码套件。</p>
+<p><img src="/img/loading1.gif" data-original="/2025/10/06/network_https_rsa/serverhello.webp"></p>
+<p>可以看到，服务端选择的密码套件是 “Cipher Suite: TLS_RSA_WITH_AES_128_GCM_SHA256”。</p>
+<p>这个密码套件看起来真让人头晕，好一大串，但是其实它是有固定格式和规范的。基本的形式是「<strong>密钥交换算法 + 签名算法 + 对称加密算法 + 摘要算法</strong>」， 一般 WITH 单词前面有两个单词，第一个单词是约定密钥交换的算法，第二个单词是约定证书的验证算法。比如刚才的密码套件的意思就是：</p>
+<ul>
+<li>由于 WITH 单词只有一个 RSA，则说明握手时密钥交换算法和签名算法都是使用 RSA；</li>
+<li>握手后的通信使用 AES 对称算法，密钥长度 128 位，分组模式是 GCM；</li>
+<li>摘要算法 SHA256 用于消息认证和产生随机数；</li>
+</ul>
+<p>就前面这两个客户端和服务端相互「打招呼」的过程，客户端和服务端就已确认了 TLS 版本和使用的密码套件，而且你可能发现客户端和服务端都会各自生成一个随机数，并且还会把随机数传递给对方。</p>
+<p>那这个随机数有啥用呢？其实这两个随机数是后续作为生成「会话密钥」的条件，所谓的会话密钥就是数据传输时，所使用的对称加密密钥。</p>
+<p>然后，服务端为了证明自己的身份，会发送「<strong>Server Certificate</strong>」给客户端，这个消息里含有数字证书。</p>
+<p><img src="/img/loading1.gif" data-original="/2025/10/06/network_https_rsa/certificate.webp"></p>
+<p>随后，服务端发了「<strong>Server Hello Done</strong>」消息，目的是告诉客户端，我已经把该给你的东西都给你了，本次打招呼完毕。</p>
+<p><img src="/img/loading1.gif" data-original="/2025/10/06/network_https_rsa/serverhellodone.webp"></p>
+<h3 id="客户端验证证书"><a href="#客户端验证证书" class="headerlink" title="客户端验证证书"></a>客户端验证证书</h3><p>在这里刹个车，客户端拿到了服务端的数字证书后，要怎么校验该数字证书是真实有效的呢？</p>
+<h4 id="数字证书和-CA-机构"><a href="#数字证书和-CA-机构" class="headerlink" title="数字证书和 CA 机构"></a>数字证书和 CA 机构</h4><p>在说校验数字证书是否可信的过程前，我们先来看看数字证书是什么，一个数字证书通常包含了：</p>
+<ul>
+<li>公钥；</li>
+<li>持有者信息；</li>
+<li>证书认证机构（CA）的信息；</li>
+<li>CA 对这份文件的数字签名及使用的算法；</li>
+<li>证书有效期；</li>
+<li>还有一些其他额外信息；</li>
+</ul>
+<p>那数字证书的作用，是用来认证公钥持有者的身份，以防止第三方进行冒充。说简单些，证书就是用来告诉客户端，该服务端是否是合法的，因为只有证书合法，才代表服务端身份是可信的。</p>
+<p>我们用证书来认证公钥持有者的身份（服务端的身份），那证书又是怎么来的？又该怎么认证证书呢？</p>
+<p>为了让服务端的公钥被大家信任，服务端的证书都是由 CA （<em>Certificate Authority</em>，证书认证机构）签名的，CA 就是网络世界里的公安局、公证中心，具有极高的可信度，所以由它来给各个公钥签名，信任的一方签发的证书，那必然证书也是被信任的。</p>
+<p>之所以要签名，是因为签名的作用可以避免中间人在获取证书时对证书内容的篡改。</p>
+<h4 id="数字证书签发和验证流程"><a href="#数字证书签发和验证流程" class="headerlink" title="数字证书签发和验证流程"></a>数字证书签发和验证流程</h4><p>如下图所示，为数字证书签发和验证流程：</p>
+<p><img src="/img/loading1.gif" data-original="/2025/10/06/network_https_rsa/%E8%AF%81%E4%B9%A6%E7%9A%84%E6%A0%A1%E9%AA%8C.webp"></p>
+<p>CA 签发证书的过程，如上图左边部分：</p>
+<ul>
+<li>首先 CA 会把持有者的公钥、用途、颁发者、有效时间等信息打成一个包，然后对这些信息进行 Hash 计算，得到一个 Hash 值；</li>
+<li>然后 CA 会使用自己的私钥将该 Hash 值加密，生成 Certificate Signature，也就是 CA 对证书做了签名；</li>
+<li>最后将 Certificate Signature 添加在文件证书上，形成数字证书；</li>
+</ul>
+<p>客户端校验服务端的数字证书的过程，如上图右边部分：</p>
+<ul>
+<li>首先客户端会使用同样的 Hash 算法获取该证书的 Hash 值 H1；</li>
+<li>通常浏览器和操作系统中集成了 CA 的公钥信息，浏览器收到证书后可以使用 CA 的公钥解密 Certificate Signature 内容，得到一个 Hash 值 H2；</li>
+<li>最后比较 H1 和 H2，如果值相同，则为可信赖的证书，否则则认为证书不可信。</li>
+</ul>
+<h4 id="证书链"><a href="#证书链" class="headerlink" title="证书链"></a>证书链</h4><p>但事实上，证书的验证过程中还存在一个证书信任链的问题，因为我们向 CA 申请的证书一般不是根证书签发的，而是由中间证书签发的，比如百度的证书，从下图你可以看到，证书的层级有三级：</p>
+<p><img src="/img/loading1.gif" data-original="/2025/10/06/network_https_rsa/baidu%E8%AF%81%E4%B9%A6.webp"></p>
+<p>对于这种三级层级关系的证书的验证过程如下：</p>
+<ul>
+<li>客户端收到 baidu.com 的证书后，发现这个证书的签发者不是根证书，就无法根据本地已有的根证书中的公钥去验证 baidu.com 证书是否可信。于是，客户端根据 baidu.com 证书中的签发者，找到该证书的颁发机构是 “GlobalSign Organization Validation CA - SHA256 - G2”，然后向 CA 请求该中间证书。</li>
+<li>请求到证书后发现 “GlobalSign Organization Validation CA - SHA256 - G2” 证书是由 “GlobalSign Root CA” 签发的，由于 “GlobalSign Root CA” 没有再上级签发机构，说明它是根证书，也就是自签证书。应用软件会检查此证书有否已预载于根证书清单上，如果有，则可以利用根证书中的公钥去验证 “GlobalSign Organization Validation CA - SHA256 - G2” 证书，如果发现验证通过，就认为该中间证书是可信的。</li>
+<li>“GlobalSign Organization Validation CA - SHA256 - G2” 证书被信任后，可以使用 “GlobalSign Organization Validation CA - SHA256 - G2” 证书中的公钥去验证 baidu.com 证书的可信性，如果验证通过，就可以信任 baidu.com 证书。</li>
+</ul>
+<p>在这四个步骤中，最开始客户端只信任根证书 GlobalSign Root CA 证书的，然后 “GlobalSign Root CA” 证书信任 “GlobalSign Organization Validation CA - SHA256 - G2” 证书，而 “GlobalSign Organization Validation CA - SHA256 - G2” 证书又信任 baidu.com 证书，于是客户端也信任 baidu.com 证书。</p>
+<p>总括来说，由于用户信任 GlobalSign，所以由 GlobalSign 所担保的 baidu.com 可以被信任，另外由于用户信任操作系统或浏览器的软件商，所以由软件商预载了根证书的 GlobalSign 都可被信任。</p>
+<p><img src="/img/loading1.gif" data-original="/2025/10/06/network_https_rsa/%E7%94%A8%E6%88%B7%E4%BF%A1%E4%BB%BB.webp"></p>
+<p>操作系统里一般都会内置一些根证书，比如我的 MAC 电脑里内置的根证书有这么多：</p>
+<p><img src="/img/loading1.gif" data-original="/2025/10/06/network_https_rsa/%E7%B3%BB%E7%BB%9F%E6%A0%B9%E8%AF%81%E4%B9%A6.webp"></p>
+<p>这样的一层层地验证就构成了一条信任链路，整个证书信任链验证流程如下图所示：</p>
+<p><img src="/img/loading1.gif" data-original="/2025/10/06/network_https_rsa/%E8%AF%81%E4%B9%A6%E9%93%BE.webp"></p>
+<p>最后一个问题，为什么需要证书链这么麻烦的流程？Root CA 为什么不直接颁发证书，而是要搞那么多中间层级呢？</p>
+<p>这是为了确保根证书的绝对安全性，将根证书隔离地越严格越好，不然根证书如果失守了，那么整个信任链都会有问题。</p>
+<h3 id="TLS-第三次握手"><a href="#TLS-第三次握手" class="headerlink" title="TLS 第三次握手"></a>TLS 第三次握手</h3><p>客户端验证完证书后，认为可信则继续往下走。</p>
+<p>接着，客户端就会生成一个新的<strong>随机数 (<em>pre-master</em>)<strong>，用服务器的 RSA 公钥加密该随机数，通过「</strong>Client Key Exchange</strong>」消息传给服务端。</p>
+<p><img src="/img/loading1.gif" data-original="/2025/10/06/network_https_rsa/clietnkeyexchange.webp"></p>
+<p>服务端收到后，用 RSA 私钥解密，得到客户端发来的随机数 (pre-master)。</p>
+<p>至此，<strong>客户端和服务端双方都共享了三个随机数，分别是 Client Random、Server Random、pre-master</strong>。</p>
+<p>于是，双方根据已经得到的三个随机数，生成<strong>会话密钥（Master Secret）</strong>，它是对称密钥，用于对后续的 HTTP 请求&#x2F;响应的数据加解密。</p>
+<p>生成完「会话密钥」后，然后客户端发一个「<strong>Change Cipher Spec</strong>」，告诉服务端开始使用加密方式发送消息。</p>
+<p><img src="/img/loading1.gif" data-original="/2025/10/06/network_https_rsa/cipherspecmessage.webp"></p>
+<p>然后，客户端再发一个「<strong>Encrypted Handshake Message（Finishd）</strong>」消息，把之前所有发送的数据做个<strong>摘要</strong>，再用会话密钥（master secret）加密一下，让服务器做个验证，验证加密通信「是否可用」和「之前握手信息是否有被中途篡改过」。</p>
+<p><img src="/img/loading1.gif" data-original="/2025/10/06/network_https_rsa/encryptd.webp"></p>
+<p>可以发现，「Change Cipher Spec」之前传输的 TLS 握手数据都是明文，之后都是对称密钥加密的密文。</p>
+<h3 id="TLS-第四次握手"><a href="#TLS-第四次握手" class="headerlink" title="TLS 第四次握手"></a>TLS 第四次握手</h3><p>服务器也是同样的操作，发「<strong>Change Cipher Spec</strong>」和「<strong>Encrypted Handshake Message</strong>」消息，如果双方都验证加密和解密没问题，那么握手正式完成。</p>
+<p>最后，就用「会话密钥」加解密 HTTP 请求和响应了。</p>
+<h2 id="RSA-算法的缺陷"><a href="#RSA-算法的缺陷" class="headerlink" title="RSA 算法的缺陷"></a>RSA 算法的缺陷</h2><p><strong>使用 RSA 密钥协商算法的最大问题是不支持前向保密</strong>。</p>
+<p>因为客户端传递随机数（用于生成对称加密密钥的条件之一）给服务端时使用的是公钥加密的，服务端收到后，会用私钥解密得到随机数。所以一旦服务端的私钥泄漏了，过去被第三方截获的所有 TLS 通讯密文都会被破解。</p>
+<p>为了解决这个问题，后面就出现了 ECDHE 密钥协商算法，我们现在大多数网站使用的正是 ECDHE 密钥协商算法，关于 ECDHE 握手的过程，将在下一篇揭晓。</p>
+<blockquote>
+<p>转载：<a target="_blank" rel="noopener" href="https://xiaolincoding.com/network/2_http/https_rsa.html">HTTPS RSA 握手解析</a></p>
+</blockquote>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://colin-cloud.github.io">Ashery</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://colin-cloud.github.io/2025/10/06/network_https_rsa/">https://colin-cloud.github.io/2025/10/06/network_https_rsa/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://colin-cloud.github.io" target="_blank">我的仓库 | Ashery</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a><a class="post-meta__tags" href="/tags/HTTPS/">HTTPS</a><a class="post-meta__tags" href="/tags/RSA/">RSA</a></div><div class="post-share"><div class="social-share" data-image="/img/avatar.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2025/10/06/network_https_optimize/" title="计算机网络_HTTP篇_HTTPS 如何优化？"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">计算机网络_HTTP篇_HTTPS 如何优化？</div></div><div class="info-2"><div class="info-item-1">HTTPS 如何优化？由裸数据传输的 HTTP 协议转成加密数据传输的 HTTPS 协议，给应用数据套了个「保护伞」，提高安全性的同时也带来了性能消耗。 因为 HTTPS 相比 HTTP 协议多一个 TLS 协议握手过程，目的是为了通过非对称加密握手协商或者交换出对称加密密钥，这个过程最长可以花费掉 2 RTT，接着后续传输的应用数据都得使用对称加密密钥来加密&#x2F;解密。 为了数据的安全性，我们不得不使用 HTTPS 协议，至今大部分网址都已从 HTTP 迁移至 HTTPS 协议，因此针对 HTTPS 的优化是非常重要的。 这次，就从多个角度来优化 HTTPS。  分析性能损耗既然要对 HTTPS 优化，那得清楚哪些步骤会产生性能消耗，再对症下药。 产生性能消耗的两个环节：  第一个环节， TLS 协议握手过程； 第二个环节，握手后的对称加密报文传输。  对于第二环节，现在主流的对称加密算法 AES、ChaCha20 性能都是不错的，而且一些 CPU 厂商还针对它们做了硬件级别的优化，因此这个环节的性能消耗可以说非常地小。 而第一个环节，TLS 协议握手过程不仅增加了网络延...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2025/10/06/network_https_optimize/" title="计算机网络_HTTP篇_HTTPS 如何优化？"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-10-06</div><div class="info-item-2">计算机网络_HTTP篇_HTTPS 如何优化？</div></div><div class="info-2"><div class="info-item-1">HTTPS 如何优化？由裸数据传输的 HTTP 协议转成加密数据传输的 HTTPS 协议，给应用数据套了个「保护伞」，提高安全性的同时也带来了性能消耗。 因为 HTTPS 相比 HTTP 协议多一个 TLS 协议握手过程，目的是为了通过非对称加密握手协商或者交换出对称加密密钥，这个过程最长可以花费掉 2 RTT，接着后续传输的应用数据都得使用对称加密密钥来加密&#x2F;解密。 为了数据的安全性，我们不得不使用 HTTPS 协议，至今大部分网址都已从 HTTP 迁移至 HTTPS 协议，因此针对 HTTPS 的优化是非常重要的。 这次，就从多个角度来优化 HTTPS。  分析性能损耗既然要对 HTTPS 优化，那得清楚哪些步骤会产生性能消耗，再对症下药。 产生性能消耗的两个环节：  第一个环节， TLS 协议握手过程； 第二个环节，握手后的对称加密报文传输。  对于第二环节，现在主流的对称加密算法 AES、ChaCha20 性能都是不错的，而且一些 CPU 厂商还针对它们做了硬件级别的优化，因此这个环节的性能消耗可以说非常地小。 而第一个环节，TLS 协议握手过程不仅增加了网络延...</div></div></div></a><a class="pagination-related" href="/2025/10/06/network_http3/" title="计算机网络_HTTP篇_HTTP&#x2F;3 强势来袭"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-10-06</div><div class="info-item-2">计算机网络_HTTP篇_HTTP&#x2F;3 强势来袭</div></div><div class="info-2"><div class="info-item-1">HTTP&#x2F;3 强势来袭HTTP&#x2F;3 现在（2022 年 5 月）还没正式推出，不过自 2017 年起，HTTP&#x2F;3 已经更新到 34 个草案了，基本的特性已经确定下来了，对于包格式可能后续会有变化。 所以，这次 HTTP&#x2F;3 介绍不会涉及到包格式，只说它的特性。  美中不足的 HTTP&#x2F;2HTTP&#x2F;2 通过头部压缩、二进制编码、多路复用、服务器推送等新特性大幅度提升了 HTTP&#x2F;1.1 的性能，而美中不足的是 HTTP&#x2F;2 协议是基于 TCP 实现的，于是存在的缺陷有三个。  队头阻塞； TCP 与 TLS 的握手时延迟； 网络迁移需要重新连接；  队头阻塞HTTP&#x2F;2 多个请求是跑在一个 TCP 连接中的，那么当 TCP 丢包时，整个 TCP 都要等待重传，那么就会阻塞该 TCP 连接中的所有请求。 比如下图中，Stream 2 有一个 TCP 报文丢失了，那么即使收到了 Stream 3 和 Stream 4 的 TCP 报文，应用层也是无法读取读取的，相当于阻塞了 Stream 3 和...</div></div></div></a><a class="pagination-related" href="/2025/10/06/network_http_interview/" title="计算机网络_HTTP篇_HTTP 常见面试题"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-10-06</div><div class="info-item-2">计算机网络_HTTP篇_HTTP 常见面试题</div></div><div class="info-2"><div class="info-item-1">HTTP 常见面试题在面试过程中，HTTP 被提问的概率还是比较高的。 我搜集了 6 大类 HTTP 面试常问的题目，同时这 6 大类题跟 HTTP 的发展和演变关联性是比较大的，通过问答 + 图解的形式由浅入深的方式帮助大家进一步的学习和理解 HTTP。  HTTP 基本概念 Get 与 Post HTTP 特性 HTTP 缓存技术 HTTPS 与 HTTP HTTP&#x2F;1.1、HTTP&#x2F;2、HTTP&#x2F;3 演变   HTTP 基本概念HTTP 是什么？HTTP 是超文本传输协议，也就是HyperText Transfer Protocol。  能否详细解释「超文本传输协议」？  HTTP 的名字「超文本协议传输」，它可以拆成三个部分：  超文本 传输 协议   1. 「协议」 在生活中，我们也能随处可见「协议」，例如：  刚毕业时会签一个「三方协议」； 找房子时会签一个「租房协议」；   生活中的协议，本质上与计算机中的协议是相同的，协议的特点：  「协」字，代表的意思是必须有两个以上的参与者。例如三方协议里的参与者有三个：你、公司、学校三个；租房协...</div></div></div></a><a class="pagination-related" href="/2025/09/28/network_base/" title="计算机网络_基础篇"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-09-28</div><div class="info-item-2">计算机网络_基础篇</div></div><div class="info-2"><div class="info-item-1">基础篇TCP&#x2F;IP 网络模型有哪几层？问大家，为什么要有 TCP&#x2F;IP 网络模型？ 对于同一台设备上的进程间通信，有很多种方式，比如有管道、消息队列、共享内存、信号等方式，而对于不同设备上的进程间通信，就需要网络通信，而设备是多样性的，所以要兼容多种多样的设备，就协商出了一套通用的网络协议。 这个网络协议是分层的，每一层都有各自的作用和职责，接下来就根据「 TCP&#x2F;IP 网络模型」分别对每一层进行介绍。 应用层最上层的，也是我们能直接接触到的就是应用层（Application Layer），我们电脑或手机使用的应用软件都是在应用层实现。那么，当两个不同设备的应用需要通信的时候，应用就把应用数据传给下一层，也就是传输层。 所以，应用层只需要专注于为用户提供应用功能，比如 HTTP、FTP、Telnet、DNS、SMTP等。 应用层是不用去关心数据是如何传输的，就类似于，我们寄快递的时候，只需要把包裹交给快递员，由他负责运输快递，我们不需要关心快递是如何被运输的。 而且应用层是工作在操作系统中的用户态，传输层及以下则工作在内核态。 传输层应用层的数据包会...</div></div></div></a><a class="pagination-related" href="/2025/10/06/network_http_optimize/" title="计算机网络_HTTP篇_HTTP&#x2F;1.1 如何优化？"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-10-06</div><div class="info-item-2">计算机网络_HTTP篇_HTTP&#x2F;1.1 如何优化？</div></div><div class="info-2"><div class="info-item-1">HTTP&#x2F;1.1 如何优化？问你一句：「你知道 HTTP&#x2F;1.1 该如何优化吗？」 我们可以从下面这三种优化思路来优化 HTTP&#x2F;1.1 协议：  尽量避免发送 HTTP 请求； 在需要发送 HTTP 请求时，考虑如何减少请求次数； 减少服务器的 HTTP 响应的数据大小；  下面，就针对这三种思路具体看看有哪些优化方法。  如何避免发送 HTTP 请求？这个思路你看到是不是觉得很奇怪，不发送 HTTP 请求，那客户端还怎么和服务器交互数据？小林你这不是耍流氓嘛？ 冷静冷静，你说的没错，客户端当然要向服务器发送请求的。 但是，对于一些具有重复性的 HTTP 请求，比如每次请求得到的数据都一样的，我们可以把这对「请求-响应」的数据都缓存在本地，那么下次就直接读取本地的数据，不必在通过网络获取服务器的响应了，这样的话 HTTP&#x2F;1.1 的性能肯定肉眼可见的提升。 所以，避免发送 HTTP 请求的方法就是通过缓存技术，HTTP 设计者早在之前就考虑到了这点，因此 HTTP 协议的头部有不少是针对缓存的字段。 那缓存是如何做到的呢？ 客户端会把第一...</div></div></div></a><a class="pagination-related" href="/2025/10/06/network_http_rpc/" title="计算机网络_HTTP篇_既然有 HTTP 协议，为什么还要有 RPC？"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-10-06</div><div class="info-item-2">计算机网络_HTTP篇_既然有 HTTP 协议，为什么还要有 RPC？</div></div><div class="info-2"><div class="info-item-1">既然有 HTTP 协议，为什么还要有 RPC？我想起了我刚工作的时候，第一次接触 RPC 协议，当时就很懵，我 HTTP 协议用的好好的，为什么还要用 RPC 协议？ 于是就到网上去搜。 不少解释显得非常官方，我相信大家在各种平台上也都看到过，解释了又好像没解释，都在用一个我们不认识的概念去解释另外一个我们不认识的概念，懂的人不需要看，不懂的人看了还是不懂。 这种看了，又好像没看的感觉，云里雾里的很难受，我懂。 为了避免大家有强烈的审丑疲劳，今天我们来尝试重新换个方式讲一讲。 从 TCP 聊起作为一个程序员，假设我们需要在 A 电脑的进程发一段数据到 B 电脑的进程，我们一般会在代码里使用 Socket 进行编程。 这时候，我们可选项一般也就 TCP 和 UDP 二选一。TCP 可靠，UDP 不可靠。除非是马总这种神级程序员（早期 QQ 大量使用 UDP），否则，只要稍微对可靠性有些要求，普通人一般无脑选 TCP 就对了。 类似下面这样。 fd = socket(AF_INET,SOCK_STREAM,0);  其中 SOCK_STREAM，是指使用字节流传输数据，说白了就是 T...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/loading1.gif" data-original="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Ashery</div><div class="author-info-description">记录美好生活~</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/xxxxx" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="https://blog.csdn.net/mjh1667002013" target="_blank" title="CSDN"><i class="fa fa-book-open"></i></a><a class="social-icon" href="tencent://AddContact/?fromId=45&amp;fromSubId=1&amp;subcmd=all&amp;uin=728831102&amp;website=www.oicqzone.com" target="_blank" title="QQ"><i class="fab fa-qq"></i></a><a class="social-icon" href="mailto:xxxxxx@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">我的博客~~~</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HTTPS-RSA-%E6%8F%A1%E6%89%8B%E8%A7%A3%E6%9E%90"><span class="toc-text">HTTPS RSA 握手解析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#TLS-%E6%8F%A1%E6%89%8B%E8%BF%87%E7%A8%8B"><span class="toc-text">TLS 握手过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RSA-%E6%8F%A1%E6%89%8B%E8%BF%87%E7%A8%8B"><span class="toc-text">RSA 握手过程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#TLS-%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%8F%A1%E6%89%8B"><span class="toc-text">TLS 第一次握手</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TLS-%E7%AC%AC%E4%BA%8C%E6%AC%A1%E6%8F%A1%E6%89%8B"><span class="toc-text">TLS 第二次握手</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%AA%8C%E8%AF%81%E8%AF%81%E4%B9%A6"><span class="toc-text">客户端验证证书</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E5%92%8C-CA-%E6%9C%BA%E6%9E%84"><span class="toc-text">数字证书和 CA 机构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E7%AD%BE%E5%8F%91%E5%92%8C%E9%AA%8C%E8%AF%81%E6%B5%81%E7%A8%8B"><span class="toc-text">数字证书签发和验证流程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%81%E4%B9%A6%E9%93%BE"><span class="toc-text">证书链</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TLS-%E7%AC%AC%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B"><span class="toc-text">TLS 第三次握手</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TLS-%E7%AC%AC%E5%9B%9B%E6%AC%A1%E6%8F%A1%E6%89%8B"><span class="toc-text">TLS 第四次握手</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RSA-%E7%AE%97%E6%B3%95%E7%9A%84%E7%BC%BA%E9%99%B7"><span class="toc-text">RSA 算法的缺陷</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/10/06/network_http3/" title="计算机网络_HTTP篇_HTTP/3 强势来袭">计算机网络_HTTP篇_HTTP/3 强势来袭</a><time datetime="2025-10-05T16:00:00.000Z" title="发表于 2025-10-06 00:00:00">2025-10-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/10/06/network_http_interview/" title="计算机网络_HTTP篇_HTTP 常见面试题">计算机网络_HTTP篇_HTTP 常见面试题</a><time datetime="2025-10-05T16:00:00.000Z" title="发表于 2025-10-06 00:00:00">2025-10-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/10/06/network_http_optimize/" title="计算机网络_HTTP篇_HTTP/1.1 如何优化？">计算机网络_HTTP篇_HTTP/1.1 如何优化？</a><time datetime="2025-10-05T16:00:00.000Z" title="发表于 2025-10-06 00:00:00">2025-10-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/10/06/network_http_rpc/" title="计算机网络_HTTP篇_既然有 HTTP 协议，为什么还要有 RPC？">计算机网络_HTTP篇_既然有 HTTP 协议，为什么还要有 RPC？</a><time datetime="2025-10-05T16:00:00.000Z" title="发表于 2025-10-06 00:00:00">2025-10-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/10/06/network_https_ecdhe/" title="计算机网络_HTTP篇_HTTPS ECDHE 握手解析">计算机网络_HTTP篇_HTTPS ECDHE 握手解析</a><time datetime="2025-10-05T16:00:00.000Z" title="发表于 2025-10-06 00:00:00">2025-10-06</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/bg.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 By Ashery</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.0</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="true" data-text="I,LOVE,YOU" data-fontsize="15px" data-random="true" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div>
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z\d\-\.\+]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(t.test(e.href)||r.test(e.href))&&(e.href=a.dataset.original)})});</script><script>(r=>{r.imageLazyLoadSetting.processImages=t;var a=r.imageLazyLoadSetting.isSPA,o=r.imageLazyLoadSetting.preloadRatio||1,d=i();function i(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(t){(a||t)&&(d=i());for(var e,n=0;n<d.length;n++)0<=(e=(e=d[n]).getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(r.innerHeight*o||document.documentElement.clientHeight*o)&&(()=>{var t,e,a,o,i=d[n];e=function(){d=d.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).dataset.loaded||(t.hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(a=new Image,o=t.getAttribute("data-original"),a.onload=function(){t.src=o,t.removeAttribute("data-original"),t.setAttribute("data-loaded",!0),e&&e()},a.onerror=function(){t.removeAttribute("data-original"),t.setAttribute("data-loaded",!1),t.src=o},t.src!==o&&(a.src=o)))})()}function e(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",e),r.addEventListener("resize",e),r.addEventListener("orientationchange",e)})(this);</script></body></html>

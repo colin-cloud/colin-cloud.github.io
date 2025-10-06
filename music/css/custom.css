@@ -4,6 +4,7 @@
 }
 .aplayer.aplayer-withlrc .aplayer-info {
     height: 120px;
+    margin-left: 120px;
 }
 .aplayer .aplayer-lrc {
     height: 60px;
