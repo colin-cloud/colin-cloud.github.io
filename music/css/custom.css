@@ -1,21 +1,30 @@
 .aplayer.aplayer-withlrc .aplayer-pic {
-    height: 120px;
-    width: 120px;
+    height: 200px;
+    width: 200px;
 }
 .aplayer.aplayer-withlrc .aplayer-info {
-    height: 120px;
-    margin-left: 120px;
+    height: 200px;
+    margin-left: 200px;
 }
 .aplayer .aplayer-lrc {
-    height: 60px;
+    height: 140px;
 }
 
 .aplayer .aplayer-lrc .aplayer-lrc-contents {
-    margin-top: 25px;
+    margin-top: 65px;
 }
 
 .aplayer .aplayer-list ol li .aplayer-list-index {
     text-align: center;
     display: inline-block;
     width: 20px;
+}
+
+.aplayer .aplayer-body {
+    padding-bottom: 10px;
+}
+
+.aplayer .aplayer-lrc p.aplayer-lrc-current {
+    color: #31c27c;
+    opacity: 0.8;
 }
