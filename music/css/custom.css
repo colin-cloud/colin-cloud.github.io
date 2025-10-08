@@ -1,19 +1,24 @@
 .aplayer.aplayer-withlrc .aplayer-pic {
-    height: 200px;
+    height: 600px;
     width: 200px;
     border-radius: 20px;
 }
 .aplayer.aplayer-withlrc .aplayer-info {
-    height: 200px;
+    height: 600px;
     margin-left: 200px;
 }
 .aplayer .aplayer-lrc {
-    height: 140px;
+    height: 540px;
 }
 
 .aplayer .aplayer-lrc .aplayer-lrc-contents {
-    margin-top: 65px;
+    padding-top: 200px;
 }
+
+/* .aplayer .aplayer-lrc .aplayer-lrc-contents p {
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+} */
 
 .aplayer .aplayer-list ol li .aplayer-list-index {
     text-align: center;
