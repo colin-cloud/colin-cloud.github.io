@@ -1,6 +1,7 @@
 .aplayer.aplayer-withlrc .aplayer-pic {
     height: 200px;
     width: 200px;
+    border-radius: 20px;
 }
 .aplayer.aplayer-withlrc .aplayer-info {
     height: 200px;
