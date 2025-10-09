@@ -131,6 +131,7 @@ def get_music_info():
 
                 # 存在判断 & 规范判断
                 if (len(audio_files) == 0):
+                    valided = False
                     global not_exist_source
                     not_exist_source.append(dir)
                 else:
@@ -138,6 +139,7 @@ def get_music_info():
                         global not_specify_source
                         not_specify_source.append(dir)
                 if (len(pic_files) == 0):
+                    valided = False
                     global not_exist_pic
                     not_exist_pic.append(dir)
                 else:
@@ -145,6 +147,7 @@ def get_music_info():
                         global not_specify_pic
                         not_specify_pic.append(dir)
                 if (len(lrc_files) == 0):
+                    valided = False
                     global not_exist_lrc
                     not_exist_lrc.append(dir)
                 else:
@@ -153,14 +156,15 @@ def get_music_info():
                         not_specify_lrc.append(dir)
 
                 # music_path = music_path.replace('_', '\_')
-                music = {
-                    "title": music_name,
-                    "author": music_author,
-                    "url": music_path + audio_files[0],
-                    "pic": music_path + pic_files[0],
-                    "lrc": music_path + lrc_files[0]
-                }
-                music_info_list.append(music)
+                if valided:
+                    music = {
+                        "title": music_name,
+                        "author": music_author,
+                        "url": music_path + audio_files[0],
+                        "pic": music_path + pic_files[0],
+                        "lrc": music_path + lrc_files[0]
+                    }
+                    music_info_list.append(music)
 
     # 是否存在缺失文件
     if (len(not_exist_source) != 0 or len(not_exist_pic) != 0 or len(not_exist_lrc) != 0):
