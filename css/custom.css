@@ -14,3 +14,10 @@
     font-size: 1.1em;
 }
 
+label > .hbe-input-label-content {
+    padding: 1em 0;
+}
+
+em {
+    color: #c849ff;
+}

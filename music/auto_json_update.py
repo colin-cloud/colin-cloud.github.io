@@ -8,15 +8,15 @@ import sys
 file_head = "title:\ndate:\ntags:\ncategories:\nkeywords:\ndescription:\ntop_img:\ncomments:\ncover:\ntoc:\ntoc_number:\ncopyright:\nmathjax:\nkatex:\nhide:\naplayer: true\n"
 
 file_import_resource = [
-    '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">',
-    '<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>',
+    '<link rel="stylesheet" href="/css/APlayer.min.css">',
+    '<script src="/js/APlayer.min.js" /></script>',
     '<link rel="stylesheet" href="/music/css/custom.css">'
 ]
 
 json_head = '{% aplayerlist %}'
 
 tab = '    '
-json_body_start = '{\n'+tab+'"narrow": false,\n'+tab+'"autoplay": false,\n'+tab+'"mode": "order",\n'+tab+'"showlrc": 3,\n'+tab+'"mutex": true,\n'+tab+'"theme": "#e6d0b2",\n'+tab+'"preload": "metadata",\n'+tab+'"listmaxheight": "513px",\n'+tab+'"music": [\n'
+json_body_start = '{\n'+tab+'"narrow": false,\n'+tab+'"autoplay": false,\n'+tab+'"mode": "order",\n'+tab+'"showlrc": 3,\n'+tab+'"volume": 0.2,\n'+tab+'"mutex": false,\n'+tab+'"theme": "#e6d0b2",\n'+tab+'"preload": "auto",\n'+tab+'"listmaxheight": "513px",\n'+tab+'"music": [\n'
 json_body_end = ']\n}\n{% endaplayerlist %}'
 json_start = '{\n'
 json_end = '}' 

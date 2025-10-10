@@ -2,9 +2,135 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://colin-cloud.github.io/2025/10/10/TCP/network_tcp_tcpqueue/</loc>
+    
+    <lastmod>2025-10-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://colin-cloud.github.io/2025/10/06/HTTP/network_http3/</loc>
+    
+    <lastmod>2025-10-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://colin-cloud.github.io/2025/10/09/TCP/network_tcp_tcpdump/</loc>
+    
+    <lastmod>2025-10-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://colin-cloud.github.io/2025/10/07/TCP/network_tcp_interview/</loc>
+    
+    <lastmod>2025-10-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://colin-cloud.github.io/2025/10/08/TCP/network_tcp_feature/</loc>
+    
+    <lastmod>2025-10-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://colin-cloud.github.io/2025/10/06/HTTP/network_https_rsa/</loc>
+    
+    <lastmod>2025-10-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://colin-cloud.github.io/2025/10/06/HTTP/network_https_optimize/</loc>
+    
+    <lastmod>2025-10-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://colin-cloud.github.io/2025/10/06/HTTP/network_https_nb/</loc>
+    
+    <lastmod>2025-10-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://colin-cloud.github.io/2025/10/06/HTTP/network_https_ecdhe/</loc>
+    
+    <lastmod>2025-10-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://colin-cloud.github.io/2025/10/06/HTTP/network_http_websocket/</loc>
+    
+    <lastmod>2025-10-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://colin-cloud.github.io/2025/10/06/HTTP/network_http_rpc/</loc>
+    
+    <lastmod>2025-10-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://colin-cloud.github.io/2025/10/06/HTTP/network_http_optimize/</loc>
+    
+    <lastmod>2025-10-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://colin-cloud.github.io/2025/10/06/HTTP/network_http_interview/</loc>
+    
+    <lastmod>2025-10-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://colin-cloud.github.io/2025/09/28/BASE/network_base/</loc>
+    
+    <lastmod>2025-10-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://colin-cloud.github.io/music/index.html</loc>
     
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-10-10</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -13,124 +139,7 @@
   <url>
     <loc>https://colin-cloud.github.io/music/index-copy.html</loc>
     
-    <lastmod>2025-10-09</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://colin-cloud.github.io/2025/10/09/network_tcp_tcpdump/</loc>
-    
-    <lastmod>2025-10-09</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://colin-cloud.github.io/2025/10/06/network_http_interview/</loc>
-    
-    <lastmod>2025-10-09</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://colin-cloud.github.io/2025/10/07/network_tcp_interview/</loc>
-    
-    <lastmod>2025-10-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://colin-cloud.github.io/2025/10/08/network_tcp_feature/</loc>
-    
-    <lastmod>2025-10-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://colin-cloud.github.io/2025/10/06/network_https_rsa/</loc>
-    
-    <lastmod>2025-10-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://colin-cloud.github.io/2025/10/06/network_https_optimize/</loc>
-    
-    <lastmod>2025-10-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://colin-cloud.github.io/2025/10/06/network_https_nb/</loc>
-    
-    <lastmod>2025-10-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://colin-cloud.github.io/2025/10/06/network_https_ecdhe/</loc>
-    
-    <lastmod>2025-10-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://colin-cloud.github.io/2025/10/06/network_http_websocket/</loc>
-    
-    <lastmod>2025-10-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://colin-cloud.github.io/2025/10/06/network_http_rpc/</loc>
-    
-    <lastmod>2025-10-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://colin-cloud.github.io/2025/10/06/network_http_optimize/</loc>
-    
-    <lastmod>2025-10-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://colin-cloud.github.io/2025/10/06/network_http3/</loc>
-    
-    <lastmod>2025-10-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://colin-cloud.github.io/2025/09/28/network_base/</loc>
-    
-    <lastmod>2025-10-08</lastmod>
+    <lastmod>2025-10-10</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -175,7 +184,7 @@
 
   <url>
     <loc>https://colin-cloud.github.io/</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-10-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -183,77 +192,77 @@
   
   <url>
     <loc>https://colin-cloud.github.io/tags/Music/</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-10-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://colin-cloud.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-10-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://colin-cloud.github.io/tags/TCP-IP/</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-10-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://colin-cloud.github.io/tags/HTTP/</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-10-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://colin-cloud.github.io/tags/DNS/</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-10-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://colin-cloud.github.io/tags/RPC/</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-10-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://colin-cloud.github.io/tags/WebSocket/</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-10-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://colin-cloud.github.io/tags/ECDHE/</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-10-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://colin-cloud.github.io/tags/HTTPS/</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-10-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://colin-cloud.github.io/tags/RSA/</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-10-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://colin-cloud.github.io/tags/TCP/</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-10-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -262,35 +271,35 @@
   
   <url>
     <loc>https://colin-cloud.github.io/categories/Music/</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-10-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://colin-cloud.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-10-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://colin-cloud.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/HTTP-%E7%AF%87/</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-10-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://colin-cloud.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%9F%BA%E7%A1%80%E7%AF%87/</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-10-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://colin-cloud.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/TCP-%E7%AF%87/</loc>
-    <lastmod>2025-10-09</lastmod>
+    <lastmod>2025-10-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
