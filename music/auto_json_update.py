@@ -99,29 +99,42 @@ def get_music_info():
 
     music_folder = './music_info_list'
     music_path_pre = '/music/music_info_list'
-    dirs = os.listdir(music_folder)
 
-    # 判断是否按照标准命名 音乐名_作者
-    valided = True
+    success = True
 
-    for dir in dirs:
-        
-        if not ('_' in dir):
+    # 遍历目录树
+    for root, dirs, files in os.walk(music_folder):
+        # print('root: ', root)
+        # 判断是否按照标准命名 音乐名_作者
+        valided = True
+        # 计算当前目录相对于根目录的相对路径
+        rel_root = os.path.relpath(root, music_folder).replace("\\", "/")
+        # 获取当前目录的名称（仅最后一级目录名）
+        parent_dir_name = os.path.basename(root)
+        # 获取当前目录的路径
+        normalized_root = root.replace("\\", "/")
+
+        # 如果是根目录，跳过
+        if root == music_folder:
+            continue
+
+        # 判断目录名是否符合规范 音乐名_作者
+        if not ('_' in parent_dir_name):
             valided = False
-            error_title_music_list.append(dir)
+            error_title_music_list.append(normalized_root)
         else: 
-            infos = dir.split('_')
+            infos = parent_dir_name.split('_')
             music_name = infos[0]
             music_author = infos[1]
             if (check_null(music_name) or check_null(music_author)):
                 valided = False
-                error_title_music_list.append(dir)
+                error_title_music_list.append(normalized_root)
             else:
                 # 打印信息
                 print(infos)
-                music_path = music_path_pre + '/' + dir + '/'
+                music_path = music_path_pre + '/' + rel_root + '/'
 
-                music_folder_real = music_folder + '/' + dir
+                music_folder_real = normalized_root
                 # 查找音频文件
                 audio_files = find_files(music_folder_real, audio_extensions)
                 # 查找封面
@@ -133,29 +146,32 @@ def get_music_info():
                 if (len(audio_files) == 0):
                     valided = False
                     global not_exist_source
-                    not_exist_source.append(dir)
+                    not_exist_source.append(normalized_root)
                 else:
                     if '_' in audio_files[0]:
+                        valided = False
                         global not_specify_source
-                        not_specify_source.append(dir)
+                        not_specify_source.append(normalized_root)
                 if (len(pic_files) == 0):
                     valided = False
                     global not_exist_pic
-                    not_exist_pic.append(dir)
+                    not_exist_pic.append(normalized_root)
                 else:
                     if '_' in pic_files[0]:
+                        valided = False
                         global not_specify_pic
-                        not_specify_pic.append(dir)
+                        not_specify_pic.append(normalized_root)
                 if (len(lrc_files) == 0):
                     valided = False
                     global not_exist_lrc
-                    not_exist_lrc.append(dir)
+                    not_exist_lrc.append(normalized_root)
                 else:
                     if '_' in lrc_files[0]:
+                        valided = False
                         global not_specify_lrc
-                        not_specify_lrc.append(dir)
+                        not_specify_lrc.append(normalized_root)
 
-                # music_path = music_path.replace('_', '\_')
+                # 如果都符合规范，添加到音乐列表
                 if valided:
                     music = {
                         "title": music_name,
@@ -165,22 +181,32 @@ def get_music_info():
                         "lrc": music_path + lrc_files[0]
                     }
                     music_info_list.append(music)
+                    # print(music)
+
+            # # 对每个文件计算相对路径
+            # for filename in files:
+            #     # 组合相对路径
+            #     if rel_root == '.':  # 如果是根目录本身
+            #         rel_path = filename
+            #     else:
+            #         rel_path = f"{rel_root}/{filename}"  # 直接使用正斜杠拼接
+            #     print(rel_path)
 
     # 是否存在缺失文件
     if (len(not_exist_source) != 0 or len(not_exist_pic) != 0 or len(not_exist_lrc) != 0):
         print('没有音乐源：', not_exist_source)
         print('没有封面：', not_exist_pic)
         print('没有歌词：', not_exist_lrc)
-        valided = False
+        success = False
 
     # 是否存在命名不规范
     if (len(not_specify_source) != 0 or len(not_specify_pic) != 0 or len(not_specify_lrc) != 0):
         print('音乐源命名不规范：', not_specify_source)
         print('封面命名不规范：', not_specify_pic)
         print('歌词命名不规范：', not_specify_lrc)
-        valided = False
+        success = False
 
-    if valided:
+    if success:
         return music_info_list
     else:
         return None
