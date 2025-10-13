@@ -12,7 +12,7 @@
 }
 
 .aplayer .aplayer-lrc .aplayer-lrc-contents {
-    padding-top: 200px;
+    margin-top: 220px;
 }
 
 /* .aplayer .aplayer-lrc .aplayer-lrc-contents p {
@@ -33,4 +33,10 @@
 .aplayer .aplayer-lrc p.aplayer-lrc-current {
     color: #31c27c;
     opacity: 0.8;
+}
+
+.aplayer .aplayer-lrc p {
+    line-height: 24px !important;
+    height: 24px !important;
+    font-size: 1.2em !important;
 }
