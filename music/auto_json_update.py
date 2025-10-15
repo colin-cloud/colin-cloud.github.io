@@ -16,7 +16,7 @@ file_import_resource = [
 json_head = '{% aplayerlist %}'
 
 tab = '    '
-json_body_start = '{\n'+tab+'"narrow": false,\n'+tab+'"autoplay": false,\n'+tab+'"mode": "order",\n'+tab+'"showlrc": 3,\n'+tab+'"volume": 0.1,\n'+tab+'"mutex": false,\n'+tab+'"theme": "#e6d0b2",\n'+tab+'"preload": "none",\n'+tab+'"listmaxheight": "513px",\n'+tab+'"music": [\n'
+json_body_start = '{\n'+tab+'"narrow": false,\n'+tab+'"autoplay": false,\n'+tab+'"mode": "order",\n'+tab+'"showlrc": 3,\n'+tab+'"volume": 0.1,\n'+tab+'"mutex": false,\n'+tab+'"theme": "#e6d0b2",\n'+tab+'"preload": "metadata",\n'+tab+'"listmaxheight": "513px",\n'+tab+'"music": [\n'
 json_body_end = ']\n}\n{% endaplayerlist %}'
 json_start = '{\n'
 json_end = '}' 
