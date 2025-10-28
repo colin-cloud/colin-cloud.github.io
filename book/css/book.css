@@ -9,6 +9,7 @@
   margin: 0 !important;
   width: 100% !important;
   max-width: none !important;
+  height: 100%;
 }
 /* 隐藏不需要的元素 */
 .post-meta,
