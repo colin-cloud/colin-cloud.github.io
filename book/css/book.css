@@ -7,7 +7,7 @@
 .layout > div {
   padding: 0 !important;
   margin: 0 !important;
-  width: 100% !important;
+  width: 99% !important;
   max-width: none !important;
   height: 100%;
 }
@@ -21,8 +21,10 @@
 
 /* PDF 容器样式 */
 .pdf-container {
-  width: 100vw;  /* 使用视窗宽度 */
-  height: calc(100vh - 60px);  /* 减去导航栏高度 */
+  /* 使用视窗宽度 */
+  width: 100vw;  
+  /* 减去导航栏高度 */
+  height: calc(100vh - 60px);  
   margin: 0;
   padding: 0;
   position: relative;
