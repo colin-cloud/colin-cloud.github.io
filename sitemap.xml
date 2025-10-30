@@ -606,20 +606,6 @@
   </url>
   
   <url>
-    <loc>https://colin-cloud.github.io/tags/RPC/</loc>
-    <lastmod>2025-10-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://colin-cloud.github.io/tags/WebSocket/</loc>
-    <lastmod>2025-10-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://colin-cloud.github.io/tags/Java/</loc>
     <lastmod>2025-10-30</lastmod>
     <changefreq>weekly</changefreq>
@@ -628,6 +614,20 @@
   
   <url>
     <loc>https://colin-cloud.github.io/tags/%E9%9D%A2%E8%AF%95/</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://colin-cloud.github.io/tags/RPC/</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://colin-cloud.github.io/tags/WebSocket/</loc>
     <lastmod>2025-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -662,6 +662,13 @@
   </url>
   
   <url>
+    <loc>https://colin-cloud.github.io/tags/TCP/</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://colin-cloud.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</loc>
     <lastmod>2025-10-30</lastmod>
     <changefreq>weekly</changefreq>
@@ -684,13 +691,6 @@
   
   <url>
     <loc>https://colin-cloud.github.io/tags/%E7%BC%93%E5%AD%98/</loc>
-    <lastmod>2025-10-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://colin-cloud.github.io/tags/TCP/</loc>
     <lastmod>2025-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -741,6 +741,13 @@
   </url>
   
   <url>
+    <loc>https://colin-cloud.github.io/categories/%E9%9D%A2%E8%AF%95/</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://colin-cloud.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/HTTP-%E7%AF%87/</loc>
     <lastmod>2025-10-30</lastmod>
     <changefreq>weekly</changefreq>
@@ -755,7 +762,7 @@
   </url>
   
   <url>
-    <loc>https://colin-cloud.github.io/categories/%E9%9D%A2%E8%AF%95/</loc>
+    <loc>https://colin-cloud.github.io/categories/%E9%9D%A2%E8%AF%95/Java/</loc>
     <lastmod>2025-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -769,21 +776,14 @@
   </url>
   
   <url>
-    <loc>https://colin-cloud.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</loc>
-    <lastmod>2025-10-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://colin-cloud.github.io/categories/%E9%9D%A2%E8%AF%95/Java/</loc>
-    <lastmod>2025-10-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://colin-cloud.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/TCP-%E7%AF%87/</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://colin-cloud.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</loc>
     <lastmod>2025-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
