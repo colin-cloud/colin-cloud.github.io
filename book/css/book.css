@@ -1,37 +1,7 @@
-/* 移除所有容器的边距和宽度限制 */
-#page,
-.layout,
-#article-container,
-.post-content,
-#post,
-.layout > div {
-  padding: 0 !important;
-  margin: 0 !important;
-  width: 99% !important;
-  max-width: none !important;
-  height: 100%;
-}
-/* 隐藏不需要的元素 */
-.post-meta,
-.post-copyright,
-.post-footer,
-.page-title {
-  display: none !important;
-}
-
 /* PDF 容器样式 */
 .pdf-container {
-  /* 使用视窗宽度 */
-  width: 100vw;  
   /* 减去导航栏高度 */
   height: calc(100vh - 60px);  
-  margin: 0;
-  padding: 0;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
 }
 
 /* iframe 样式 */
@@ -40,4 +10,9 @@
   height: 100%;
   border: none;
   display: block;
+}
+
+button.hbe-button {
+  margin: 0 auto;
+  margin-top: 40px;
 }
