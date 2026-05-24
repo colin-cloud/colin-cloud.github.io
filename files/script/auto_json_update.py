@@ -97,7 +97,7 @@ def check_null(str):
 def get_music_info():
     music_info_list = []
 
-    music_folder = './music_info_list'
+    music_folder = 'E:/data/blog/source/music/music_info_list'
     music_path_pre = '/music/music_info_list'
 
     success = True
@@ -230,9 +230,10 @@ def get_music_json_str():
 
 # 创建文件
 def auto_create_json_file():
+    file_path = 'E:/data/blog/source/music/index.md'
     try:
         # 打开文件并写入内容
-        with open(f"index.md", "w", encoding="utf-8") as file:
+        with open(f"{file_path}", "w", encoding="utf-8") as file:
             # 写入md头
             print("写入文件头 start---")
             file.write(f"---\n{file_head}---\n")
@@ -294,8 +295,9 @@ def check_specify():
         # 正常退出程序
         sys.exit()
 
-check_specify()
+if __name__ == "__main__":
+    check_specify()
 
-copy_file_example()
+    copy_file_example()
 
-auto_create_json_file()
+    auto_create_json_file()

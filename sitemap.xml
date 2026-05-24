@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://colin-cloud.github.io/music/index.html</loc>
+    
+    <lastmod>2026-05-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://colin-cloud.github.io/book/index.html</loc>
     
     <lastmod>2026-05-24</lastmod>
@@ -47,24 +56,6 @@
   </url>
   
   <url>
-    <loc>https://colin-cloud.github.io/book/book_list/%E7%A7%91%E5%B9%BB%E7%B1%BB/%E4%B8%89%E4%BD%93%EF%BC%88%E5%9C%B0%E7%90%83%E5%BE%80%E4%BA%8B%E3%80%81%E9%BB%91%E6%9A%97%E6%A3%AE%E6%9E%97%E3%80%81%E6%AD%BB%E7%A5%9E%E6%B0%B8%E7%94%9F%EF%BC%89/%E4%B8%89%E4%BD%93%EF%BC%88%E5%9C%B0%E7%90%83%E5%BE%80%E4%BA%8B%E3%80%81%E9%BB%91%E6%9A%97%E6%A3%AE%E6%9E%97%E3%80%81%E6%AD%BB%E7%A5%9E%E6%B0%B8%E7%94%9F%EF%BC%89.html</loc>
-    
-    <lastmod>2026-05-24</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://colin-cloud.github.io/book/book_list/%E7%A7%91%E5%B9%BB%E7%B1%BB/%E7%8C%AE%E7%BB%99%E9%98%BF%E5%B0%94%E5%90%89%E4%BE%AC%E7%9A%84%E8%8A%B1%E6%9D%9F/%E7%8C%AE%E7%BB%99%E9%98%BF%E5%B0%94%E5%90%89%E4%BE%AC%E7%9A%84%E8%8A%B1%E6%9D%9F.html</loc>
-    
-    <lastmod>2026-05-24</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://colin-cloud.github.io/book/book_list/%E7%A7%91%E5%B9%BB%E7%B1%BB/%E4%B8%80%E4%B9%9D%E5%85%AB%E5%9B%9B/%E4%B8%80%E4%B9%9D%E5%85%AB%E5%9B%9B.html</loc>
     
     <lastmod>2026-05-24</lastmod>
@@ -74,7 +65,25 @@
   </url>
   
   <url>
+    <loc>https://colin-cloud.github.io/book/book_list/%E7%A7%91%E5%B9%BB%E7%B1%BB/%E4%B8%89%E4%BD%93%EF%BC%88%E5%9C%B0%E7%90%83%E5%BE%80%E4%BA%8B%E3%80%81%E9%BB%91%E6%9A%97%E6%A3%AE%E6%9E%97%E3%80%81%E6%AD%BB%E7%A5%9E%E6%B0%B8%E7%94%9F%EF%BC%89/%E4%B8%89%E4%BD%93%EF%BC%88%E5%9C%B0%E7%90%83%E5%BE%80%E4%BA%8B%E3%80%81%E9%BB%91%E6%9A%97%E6%A3%AE%E6%9E%97%E3%80%81%E6%AD%BB%E7%A5%9E%E6%B0%B8%E7%94%9F%EF%BC%89.html</loc>
+    
+    <lastmod>2026-05-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://colin-cloud.github.io/book/book_list/%E7%A7%91%E5%B9%BB%E7%B1%BB/%E5%B9%B3%E9%9D%A2%E5%9B%BD/%E5%B9%B3%E9%9D%A2%E5%9B%BD.html</loc>
+    
+    <lastmod>2026-05-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://colin-cloud.github.io/book/book_list/%E7%A7%91%E5%B9%BB%E7%B1%BB/%E7%8C%AE%E7%BB%99%E9%98%BF%E5%B0%94%E5%90%89%E4%BE%AC%E7%9A%84%E8%8A%B1%E6%9D%9F/%E7%8C%AE%E7%BB%99%E9%98%BF%E5%B0%94%E5%90%89%E4%BE%AC%E7%9A%84%E8%8A%B1%E6%9D%9F.html</loc>
     
     <lastmod>2026-05-24</lastmod>
     
@@ -101,7 +110,7 @@
   </url>
   
   <url>
-    <loc>https://colin-cloud.github.io/book/book_list/%E6%96%87%E5%AD%A6%E7%B1%BB/%E8%AE%B8%E4%B8%89%E8%A7%82%E5%8D%96%E8%A1%80%E8%AE%B0/%E8%AE%B8%E4%B8%89%E8%A7%82%E5%8D%96%E8%A1%80%E8%AE%B0.html</loc>
+    <loc>https://colin-cloud.github.io/book/book_list/%E6%96%87%E5%AD%A6%E7%B1%BB/%E9%92%A2%E9%93%81%E6%98%AF%E6%80%8E%E6%A0%B7%E7%82%BC%E6%88%90%E7%9A%84/%E9%92%A2%E9%93%81%E6%98%AF%E6%80%8E%E6%A0%B7%E7%82%BC%E6%88%90%E7%9A%84.html</loc>
     
     <lastmod>2026-05-24</lastmod>
     
@@ -110,7 +119,7 @@
   </url>
   
   <url>
-    <loc>https://colin-cloud.github.io/book/book_list/%E6%96%87%E5%AD%A6%E7%B1%BB/%E9%92%A2%E9%93%81%E6%98%AF%E6%80%8E%E6%A0%B7%E7%82%BC%E6%88%90%E7%9A%84/%E9%92%A2%E9%93%81%E6%98%AF%E6%80%8E%E6%A0%B7%E7%82%BC%E6%88%90%E7%9A%84.html</loc>
+    <loc>https://colin-cloud.github.io/book/book_list/%E6%96%87%E5%AD%A6%E7%B1%BB/%E8%AE%B8%E4%B8%89%E8%A7%82%E5%8D%96%E8%A1%80%E8%AE%B0/%E8%AE%B8%E4%B8%89%E8%A7%82%E5%8D%96%E8%A1%80%E8%AE%B0.html</loc>
     
     <lastmod>2026-05-24</lastmod>
     
@@ -137,7 +146,7 @@
   </url>
   
   <url>
-    <loc>https://colin-cloud.github.io/book/book_list/%E6%96%87%E5%AD%A6%E7%B1%BB/%E7%B1%B3%E5%BE%B7%E5%B0%94%E9%A9%AC%E5%A5%91/%E7%B1%B3%E5%BE%B7%E5%B0%94%E9%A9%AC%E5%A5%91%EF%BC%88%E4%B8%8A%EF%BC%89.html</loc>
+    <loc>https://colin-cloud.github.io/book/book_list/%E6%96%87%E5%AD%A6%E7%B1%BB/%E7%B1%B3%E5%BE%B7%E5%B0%94%E9%A9%AC%E5%A5%91/%E7%B1%B3%E5%BE%B7%E5%B0%94%E9%A9%AC%E5%A5%91%EF%BC%88%E4%B8%8B%EF%BC%89.html</loc>
     
     <lastmod>2026-05-24</lastmod>
     
@@ -146,7 +155,7 @@
   </url>
   
   <url>
-    <loc>https://colin-cloud.github.io/book/book_list/%E6%96%87%E5%AD%A6%E7%B1%BB/%E7%B1%B3%E5%BE%B7%E5%B0%94%E9%A9%AC%E5%A5%91/%E7%B1%B3%E5%BE%B7%E5%B0%94%E9%A9%AC%E5%A5%91%EF%BC%88%E4%B8%8B%EF%BC%89.html</loc>
+    <loc>https://colin-cloud.github.io/book/book_list/%E6%96%87%E5%AD%A6%E7%B1%BB/%E7%B1%B3%E5%BE%B7%E5%B0%94%E9%A9%AC%E5%A5%91/%E7%B1%B3%E5%BE%B7%E5%B0%94%E9%A9%AC%E5%A5%91%EF%BC%88%E4%B8%8A%EF%BC%89.html</loc>
     
     <lastmod>2026-05-24</lastmod>
     
@@ -182,7 +191,7 @@
   </url>
   
   <url>
-    <loc>https://colin-cloud.github.io/book/book_list/%E6%96%87%E5%AD%A6%E7%B1%BB/%E7%88%B1%E7%8E%9B/%E7%88%B1%E7%8E%9B.html</loc>
+    <loc>https://colin-cloud.github.io/book/book_list/%E6%96%87%E5%AD%A6%E7%B1%BB/%E6%B5%81%E4%BF%97%E5%9C%B0/%E6%B5%81%E4%BF%97%E5%9C%B0.html</loc>
     
     <lastmod>2026-05-24</lastmod>
     
@@ -200,16 +209,7 @@
   </url>
   
   <url>
-    <loc>https://colin-cloud.github.io/book/book_list/%E6%96%87%E5%AD%A6%E7%B1%BB/%E6%B5%81%E4%BF%97%E5%9C%B0/%E6%B5%81%E4%BF%97%E5%9C%B0.html</loc>
-    
-    <lastmod>2026-05-24</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://colin-cloud.github.io/book/book_list/%E6%96%87%E5%AD%A6%E7%B1%BB/%E6%9D%80%E6%AD%BB%E4%B8%80%E5%8F%AA%E7%9F%A5%E6%9B%B4%E9%B8%9F/%E6%9D%80%E6%AD%BB%E4%B8%80%E5%8F%AA%E7%9F%A5%E6%9B%B4%E9%B8%9F.html</loc>
+    <loc>https://colin-cloud.github.io/book/book_list/%E6%96%87%E5%AD%A6%E7%B1%BB/%E7%88%B1%E7%8E%9B/%E7%88%B1%E7%8E%9B.html</loc>
     
     <lastmod>2026-05-24</lastmod>
     
@@ -236,7 +236,7 @@
   </url>
   
   <url>
-    <loc>https://colin-cloud.github.io/book/book_list/%E6%96%87%E5%AD%A6%E7%B1%BB/%E5%B9%B3%E5%87%A1%E7%9A%84%E4%B8%96%E7%95%8C/%E5%B9%B3%E5%87%A1%E7%9A%84%E4%B8%96%E7%95%8C%EF%BC%88%E4%B8%8A%EF%BC%89.html</loc>
+    <loc>https://colin-cloud.github.io/book/book_list/%E6%96%87%E5%AD%A6%E7%B1%BB/%E6%9D%80%E6%AD%BB%E4%B8%80%E5%8F%AA%E7%9F%A5%E6%9B%B4%E9%B8%9F/%E6%9D%80%E6%AD%BB%E4%B8%80%E5%8F%AA%E7%9F%A5%E6%9B%B4%E9%B8%9F.html</loc>
     
     <lastmod>2026-05-24</lastmod>
     
@@ -246,6 +246,15 @@
   
   <url>
     <loc>https://colin-cloud.github.io/book/book_list/%E6%96%87%E5%AD%A6%E7%B1%BB/%E5%B9%B3%E5%87%A1%E7%9A%84%E4%B8%96%E7%95%8C/%E5%B9%B3%E5%87%A1%E7%9A%84%E4%B8%96%E7%95%8C%EF%BC%88%E4%B8%8B%EF%BC%89.html</loc>
+    
+    <lastmod>2026-05-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://colin-cloud.github.io/book/book_list/%E6%96%87%E5%AD%A6%E7%B1%BB/%E5%B9%B3%E5%87%A1%E7%9A%84%E4%B8%96%E7%95%8C/%E5%B9%B3%E5%87%A1%E7%9A%84%E4%B8%96%E7%95%8C%EF%BC%88%E4%B8%8A%EF%BC%89.html</loc>
     
     <lastmod>2026-05-24</lastmod>
     
@@ -272,7 +281,7 @@
   </url>
   
   <url>
-    <loc>https://colin-cloud.github.io/book/book_list/%E6%96%87%E5%AD%A6%E7%B1%BB/%E5%AD%A4%E7%8B%AC%E9%B8%BD/%E5%AD%A4%E7%8B%AC%E9%B8%BD%EF%BC%88%E4%B8%8B%EF%BC%89.html</loc>
+    <loc>https://colin-cloud.github.io/book/book_list/%E6%96%87%E5%AD%A6%E7%B1%BB/%E5%AD%A4%E7%8B%AC%E9%B8%BD/%E5%AD%A4%E7%8B%AC%E9%B8%BD%EF%BC%88%E4%B8%8A%EF%BC%89.html</loc>
     
     <lastmod>2026-05-24</lastmod>
     
@@ -290,7 +299,7 @@
   </url>
   
   <url>
-    <loc>https://colin-cloud.github.io/book/book_list/%E6%96%87%E5%AD%A6%E7%B1%BB/%E5%AD%A4%E7%8B%AC%E9%B8%BD/%E5%AD%A4%E7%8B%AC%E9%B8%BD%EF%BC%88%E4%B8%8A%EF%BC%89.html</loc>
+    <loc>https://colin-cloud.github.io/book/book_list/%E6%96%87%E5%AD%A6%E7%B1%BB/%E5%AD%A4%E7%8B%AC%E9%B8%BD/%E5%AD%A4%E7%8B%AC%E9%B8%BD%EF%BC%88%E4%B8%8B%EF%BC%89.html</loc>
     
     <lastmod>2026-05-24</lastmod>
     
@@ -308,7 +317,7 @@
   </url>
   
   <url>
-    <loc>https://colin-cloud.github.io/book/book_list/%E6%96%87%E5%AD%A6%E7%B1%BB/%E5%9B%B4%E5%9F%8E/%E5%9B%B4%E5%9F%8E.html</loc>
+    <loc>https://colin-cloud.github.io/book/book_list/%E6%96%87%E5%AD%A6%E7%B1%BB/%E5%8A%9D%E5%AF%BC/%E5%8A%9D%E5%AF%BC.html</loc>
     
     <lastmod>2026-05-24</lastmod>
     
@@ -317,7 +326,7 @@
   </url>
   
   <url>
-    <loc>https://colin-cloud.github.io/book/book_list/%E6%96%87%E5%AD%A6%E7%B1%BB/%E5%8A%9D%E5%AF%BC/%E5%8A%9D%E5%AF%BC.html</loc>
+    <loc>https://colin-cloud.github.io/book/book_list/%E6%96%87%E5%AD%A6%E7%B1%BB/%E5%9B%B4%E5%9F%8E/%E5%9B%B4%E5%9F%8E.html</loc>
     
     <lastmod>2026-05-24</lastmod>
     
@@ -428,24 +437,6 @@
     <loc>https://colin-cloud.github.io/book/book_list/%E4%BA%BA%E6%96%87%E5%8E%86%E5%8F%B2%E7%B1%BB/%E6%98%8E%E6%9C%9D%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/%E6%98%8E%E6%9C%9D%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF.html</loc>
     
     <lastmod>2026-05-24</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://colin-cloud.github.io/music/index.html</loc>
-    
-    <lastmod>2026-05-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://colin-cloud.github.io/music/index-copy.html</loc>
-    
-    <lastmod>2026-05-11</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -972,7 +963,21 @@
   </url>
   
   <url>
-    <loc>https://colin-cloud.github.io/tags/IP/</loc>
+    <loc>https://colin-cloud.github.io/tags/TCP-IP/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://colin-cloud.github.io/tags/HTTP/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://colin-cloud.github.io/tags/DNS/</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -993,7 +998,7 @@
   </url>
   
   <url>
-    <loc>https://colin-cloud.github.io/tags/HTTP/</loc>
+    <loc>https://colin-cloud.github.io/tags/IP/</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1035,6 +1040,13 @@
   </url>
   
   <url>
+    <loc>https://colin-cloud.github.io/tags/TCP/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://colin-cloud.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>weekly</changefreq>
@@ -1063,13 +1075,6 @@
   </url>
   
   <url>
-    <loc>https://colin-cloud.github.io/tags/TCP/</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://colin-cloud.github.io/tags/%E5%86%85%E5%AD%98/</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>weekly</changefreq>
@@ -1084,6 +1089,13 @@
   </url>
   
   <url>
+    <loc>https://colin-cloud.github.io/tags/%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://colin-cloud.github.io/tags/Linux/</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>weekly</changefreq>
@@ -1092,27 +1104,6 @@
   
   <url>
     <loc>https://colin-cloud.github.io/tags/Windows/</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://colin-cloud.github.io/tags/%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://colin-cloud.github.io/tags/TCP-IP/</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://colin-cloud.github.io/tags/DNS/</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1142,6 +1133,13 @@
   </url>
   
   <url>
+    <loc>https://colin-cloud.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%9F%BA%E7%A1%80%E7%AF%87/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://colin-cloud.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/HTTP-%E7%AF%87/</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>weekly</changefreq>
@@ -1156,14 +1154,14 @@
   </url>
   
   <url>
-    <loc>https://colin-cloud.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</loc>
+    <loc>https://colin-cloud.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/TCP-%E7%AF%87/</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://colin-cloud.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/TCP-%E7%AF%87/</loc>
+    <loc>https://colin-cloud.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1185,13 +1183,6 @@
   
   <url>
     <loc>https://colin-cloud.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://colin-cloud.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%9F%BA%E7%A1%80%E7%AF%87/</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
