@@ -82,6 +82,14 @@ not_specify_lrc = []
 # 音乐列表
 music_info_list = None
 
+# 源文件路径
+source = "E:/data/blog/source/music/index.md"
+# 目标文件路径
+destination = "E:/data/blog/source/music/index-copy.md"
+
+music_folder = 'E:/data/blog/source/music/music_info_list'
+music_path_pre = '/music/music_info_list'
+
 # 判断空
 def check_null(str):
     return str is None or str == ''
@@ -96,10 +104,7 @@ def check_null(str):
 #}
 def get_music_info():
     music_info_list = []
-
-    music_folder = 'E:/data/blog/source/music/music_info_list'
-    music_path_pre = '/music/music_info_list'
-
+    
     success = True
 
     # 遍历目录树
@@ -230,10 +235,9 @@ def get_music_json_str():
 
 # 创建文件
 def auto_create_json_file():
-    file_path = 'E:/data/blog/source/music/index.md'
     try:
         # 打开文件并写入内容
-        with open(f"{file_path}", "w", encoding="utf-8") as file:
+        with open(f"{source}", "w", encoding="utf-8") as file:
             # 写入md头
             print("写入文件头 start---")
             file.write(f"---\n{file_head}---\n")
@@ -270,11 +274,6 @@ def auto_create_json_file():
 
 # 备份文件
 def copy_file_example():
-    # 源文件路径
-    source = "index.md"
-    # 目标文件路径
-    destination = "index-copy.md"   
-    
     # 1. 基本复制（仅复制内容，不保留元数据）
     try:
         shutil.copy(source, destination)
@@ -298,6 +297,6 @@ def check_specify():
 if __name__ == "__main__":
     check_specify()
 
-    copy_file_example()
+    # copy_file_example()
 
     auto_create_json_file()
